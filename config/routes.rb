@@ -11,11 +11,15 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :posts
-  resources :users, only: [:show, :edit, :update] do
+  resources :users, only: [:show, :edit, :update]do
   		# 退会機能
-        member do
-            get "unsubscribe"
-            patch "withdrawl"
-        end
-   end
+      member do
+          get "unsubscribe"
+          patch "withdrawl"
+      end
+  end
+
+  devise_scope :user do
+    root "devise/sessions#new"
+  end
 end
