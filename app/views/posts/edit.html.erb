@@ -1,2 +1,13 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<% if current_user.id == @post.user.id %>
+	<div class="row">
+		<h2>編集</h2>
+	</div>
+	<div class="row">
+		<%= form_for (@post) do |f| %>
+			<%= render 'form', post: @post, f: f %>
+			<div class="product-form">
+			  <%= f.submit "編集内容を保存する", class: "btn btn-primary" %>
+			</div>
+		<% end %>
+	</div>
+<% end %>

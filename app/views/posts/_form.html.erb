@@ -1,0 +1,30 @@
+<% if post.errors.any? %>
+	<%= post.errors.count %>件のエラーが発生しました
+	<% post.errors.full_messages.each do |message| %>
+	  <%= message %>
+	<% end %>
+<% end %>
+
+<div class="row">
+	<div class="col-xs-8">
+		<%= f.text_field :title, placeholder: 'タイトル', class: "form-control" %>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-8">
+		<%= f.text_area :body, placeholder: 'その日の散歩やウォーキングの内容や感想など', class:"form-control", rows:"8" %>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-1">
+		<%= f.text_field :steps, placeholder: '歩数', class: "form-control" %>
+	</div>
+	<div class="col-xs-1">
+		 <span>歩</span>
+	</div>
+</div>
+<div class="row">
+	<%= f.attachment_field :image, class: "col-xs-6" %>
+</div>
+
+
