@@ -1,2 +1,11 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<div class="row">
+	<h2>投稿フォーム</h2>
+</div>
+<%= form_for (@post) do |f| %>
+	<%= render 'form', post: @post, f: f %>
+	<div class="row">
+		<div class="product-form">
+			<%= f.submit "記録する", class: "btn btn-primary" %>
+		</div>
+	</div>
+<% end %>

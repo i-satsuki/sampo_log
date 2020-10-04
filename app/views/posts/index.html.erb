@@ -1,2 +1,16 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<dir class="row">
+	<h2 class="text-center">記録リスト</h2>
+</dir>
+<div class="row">
+	<% @posts.each do |post| %>
+		<div class="col-xs-4">
+			<%= attachment_image_tag(post, :image, size: "200x200", fallback: "no-image.png") %> <br>
+			<%= link_to post.title, post_path(post), class: "post_#{post.id}" %>
+			<!-- I18n.lは日時フォーマットのメソッド -->
+			<%= I18n.l post.created_at, format: :short %>
+		</div>
+	<% end %>
+</div>
+<div class= "text-center">
+	<%= paginate(@posts) %>
+</div>
