@@ -4,7 +4,7 @@
 
 <div class="row">
 	<div class="col-xs-6">
-		<%= attachment_image_tag @post, :image, size: "400x400", fallback: "no-image.png" %> <br>
+		<%= attachment_image_tag @post, :image, size: "400x400", fallback: "no_image.png" %> <br>
 		<span>歩数：</span><%= @post.steps %><span>歩</span>
 	</div>
 	<div class="col-xs-6">
@@ -15,8 +15,8 @@
 <div class="row">
 	<% if @post.user == current_user %>
 		<div class="text-center">
-			<%= link_to "編集する", edit_post_path(@post), class: "btn btn-primary edit_post_#{@post.id}" %>
-			<%= link_to "削除する", post_path(@post), method: :delete, class: "btn btn-danger" %>
+			<%= link_to "編集する", edit_post_path(@post), class: "glyphicon glyphicon-edit btn btn-default edit_post_#{@post.id}" %>
+			<%= link_to "削除する", post_path(@post), method: :delete, class: "glyphicon glyphicon-trash btn btn-danger" %>
 		</div>
 	<% end %>
 </div>

@@ -1,2 +1,45 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="row">
+	<h2><%= @user.name %>さんのプロフィール</h2>
+</div>
+
+<div class="row">
+	<div class="col-xs-3">
+		<%= attachment_image_tag(@user, :profile_image, size: "200x200", fallback: "no_image.png") %>
+	</div>
+	<div class="col-xs-6">
+		<label>自己紹介</label> <br>
+		<%= @user.introduction %>
+	</div>
+</div>
+
+<% if @user.id == current_user.id %>
+	<div class="row">
+		<div class="col-xs-offset-3">
+			<%= link_to '編集する', edit_user_path(@user), class: "btn btn-default edit_user_#{@user.id}" %>
+			<%= link_to 'パスワードを変更する', edit_user_registration_path, class: "btn btn-default" %>
+		</div>
+	</div>
+<% end %>
+
+<% if @user.id != current_user.id %>
+	<div class="row">
+		<div class="col-xs-offset-3">
+			<span>フォローする</span>
+		</div>
+	</div>
+<% end %>
+
+<% if @user.id == current_user.id %>
+	<div class="row">
+		<div class="col-xs-offset-3">
+			<span>フォロー：xx人</span>
+			<span>フォロワー：xx人</span>
+		</div>
+	</div>
+<% end %>
+
+<div class="row">
+	<div class="col-xs-offset-8">
+		<%= link_to '投稿リストを見る', posts_path(user: @user.id), class: "glyphicon glyphicon-picture" %>
+	</div>
+</div>

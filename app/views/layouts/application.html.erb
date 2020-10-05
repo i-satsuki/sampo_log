@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <header>
+      <%= link_to "ログアウト",  destroy_user_session_path, method: :delete %>
+    </header>
     <div class="container">
       <p id="notice"><%= notice %></p>
       <%= yield %>
