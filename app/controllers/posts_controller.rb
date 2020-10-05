@@ -17,7 +17,18 @@ class PostsController < ApplicationController
   end
 
   def index
-  	@posts = Post.all.order(created_at: :desc).page(params[:page]).per(6)
+    # ユーザーごとに投稿一覧を表示させる
+    if params["user"]
+      @user = User.find(params["user"])
+    	@posts = @user.posts.all.order(created_at: :desc).page(params[:page]).per(6)
+    else
+      @user = current_user
+      @posts = @user.posts.all.order(created_at: :desc).page(params[:page]).per(6)
+    end
+    # 退会ユーザーの投稿ページは表示しない
+    if @user.is_deleted == true
+      redirect_to posts_path
+    end
   end
 
   def show

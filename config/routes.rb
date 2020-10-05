@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   		# 退会機能
       member do
           get "unsubscribe"
-          patch "withdrawl"
+          patch "withdraw"
       end
   end
 

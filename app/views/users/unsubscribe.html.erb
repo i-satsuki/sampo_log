@@ -1,0 +1,16 @@
+<div class="row">
+	<h3>本当に退会しますか？</h3>
+</div>
+
+<div class="row">
+	<p>
+		一度退会すると、データは全て削除されてしまい、 <br>
+		復元することはできません。 <br>
+		退会する場合は、「退会する」をクリックしてください。
+	</p>
+</div>
+
+<div class="row">
+	<%= link_to "退会しない", user_path(@user.id), class: "btn btn-primary" %>
+	<%= link_to "退会する", withdraw_user_path(@user.id), method: :patch, "data-confirm" => "OKを押すと退会処理がされます。本当によろしいですか？", class: "btn btn-danger" %>
+</div>
