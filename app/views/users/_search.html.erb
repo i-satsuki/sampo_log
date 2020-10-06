@@ -1,0 +1,8 @@
+<% users.each do |user| %>
+	<div class="row">
+		<%= attachment_image_tag(user, :profile_image, size: "200x200", fallback: "no_image.png") %>
+	</div>
+	<div class="row">
+		<%= link_to user.name, user_path(user) %>
+	</div>
+<% end %>

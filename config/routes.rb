@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'search/search'
+  get '/search', to: 'search#search'
   get 'charts/weekly'
   get 'events/index'
   post 'follow/:id', to: 'relationships#follow', as: 'follow'
