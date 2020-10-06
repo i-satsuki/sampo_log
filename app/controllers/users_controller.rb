@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   	# 退会ユーザーの情報は表示しない
   	if @user.is_deleted == true
-		redirect_to user_path(current_user)
-	end
+		  redirect_to user_path(current_user)
+    end
   end
 
   def edit
@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     end
   end
 
+  # 退会処理
   def unsubscribe
   	@user = User.find(params[:id])
   end
@@ -34,9 +35,14 @@ class UsersController < ApplicationController
     redirect_to root_path, notice: "退会処理が完了しました！"
   end
 
+  # ユーザーIDの検索結果を表示
+  def search
+    @users = User.all
+  end
+
   private
   def user_params
-    params.require(:user).permit(:name, :introduction, :profile_image)
+    params.require(:user).permit(:name, :introduction, :profile_image, :is_deleted)
   end
 
   def ensure_correct_user
