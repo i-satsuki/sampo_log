@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/search', to: 'search#search'
-  get 'charts/weekly'
+  get 'charts/monthly'
   get 'events/index'
   post 'follow/:id', to: 'relationships#follow', as: 'follow'
   post 'unfollow/:id', to: 'relationships#unfollow', as: 'unfollow'
