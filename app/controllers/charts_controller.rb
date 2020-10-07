@@ -1,4 +1,6 @@
 class ChartsController < ApplicationController
+  before_action :authenticate_user!
+
   def monthly
   	  # pre_previewのパラメータが入っていれば、1ヶ月"前"を@target_monthに入れる
 	  if params[:pre_preview].present?
