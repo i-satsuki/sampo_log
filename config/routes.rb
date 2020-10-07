@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get '/search', to: 'search#search'
   get 'charts/monthly'
-  get 'events/index'
+  get '/events', to: 'events#index'
   post 'follow/:id', to: 'relationships#follow', as: 'follow'
   post 'unfollow/:id', to: 'relationships#unfollow', as: 'unfollow'
   get 'users/following/:user_id', to: 'users#following', as:'users_following'
