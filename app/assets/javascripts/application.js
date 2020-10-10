@@ -66,7 +66,7 @@ $(function () {
                 //イベントの時間表示を２４時間に
                 timeFormat: "HH:mm",
                 //イベントの色を変える
-                eventColor: '#B2DFDB',
+                eventColor: '#FFD180',
                 //イベントの文字色を変える
                 eventTextColor: '#000000',
                 eventRender: function(event, element) {

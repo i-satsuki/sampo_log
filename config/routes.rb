@@ -2,22 +2,24 @@ Rails.application.routes.draw do
   get '/search', to: 'search#search'
   get 'charts/monthly'
   get '/events', to: 'events#index'
-  post 'follow/:id', to: 'relationships#follow', as: 'follow'
-  post 'unfollow/:id', to: 'relationships#unfollow', as: 'unfollow'
-  get 'users/following/:user_id', to: 'users#following', as:'users_following'
-  get 'users/follower/:user_id', to: 'users#follower', as:'users_follower'
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :posts
+
   resources :users, only: [:show, :edit, :update]do
+      resource :relationships, only: [:create, :destroy]
   		# 退会機能
       member do
           get "unsubscribe"
           patch "withdraw"
+          get "following"
+          get "follower"
       end
   end
+
+
 
   devise_scope :user do
     root "devise/sessions#new"

@@ -1,8 +1,12 @@
 <% users.each do |user| %>
 	<div class="row">
-		<%= attachment_image_tag(user, :profile_image, size: "200x200", fallback: "no_image.png") %>
+		<div class="text-center">
+			<%= attachment_image_tag(user, :profile_image, size: "200x200", fallback: "no_image.png", style: "border-radius: 50%;", class: "search-profile-image") %>
+		</div>
 	</div>
 	<div class="row">
-		<%= link_to user.name, user_path(user) %>
+		<div class="text-center">
+			<%= link_to user.name, user_path(user), class: "search-name" %>
+		</div>
 	</div>
 <% end %>
