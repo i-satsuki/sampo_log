@@ -2,14 +2,20 @@
 	<h2 class="text-center">投稿</h2>
 </dir>
 <div class="row">
-	<% @posts.each do |post| %>
-		<div class="col-xs-4">
-			<%= attachment_image_tag(post, :image, size: "200x200", fallback: "no_image.png") %> <br>
-			<%= link_to post.title, post_path(post), class: "post_#{post.id}" %>
-			<!-- I18n.lは日時フォーマットのメソッド -->
-			<%= I18n.l post.created_at, format: :short %>
-		</div>
-	<% end %>
+	<div class="text-center">
+		<% @posts.each do |post| %>
+			<div class="col-xs-4">
+				<%= link_to post_path(post), class: "post_#{post.id} " do %>
+					<%= attachment_image_tag(post, :image, size: "200x200", fallback: "no_image.png") %> <br>
+					<span class="post-index-title"><%= post.title %></span>
+				<% end %>
+				<!-- I18n.lは日時フォーマットのメソッド -->
+				(<%= I18n.l post.created_at, format: :short, class: "post-index-time" %>)
+
+				<%= render 'favorite-button', post: post %>
+			</div>
+		<% end %>
+	</div>
 </div>
 <div class= "text-center">
 	<%= paginate(@posts) %>
