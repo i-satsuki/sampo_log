@@ -25,4 +25,9 @@
 			</div>
 		</div>
 	<% end %>
+
+	<div class="col-xs-offset-9 text-right">
+		<%= render 'favorite-button', post: @post %>
+		<%= @post.favorites.count%><span>人が「いいね」しました</span>
+	</div>
 </div>
