@@ -17,16 +17,43 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-#calendar {
-  margin: 0 auto;
-  width: 900px;
-  text-align: center;
-  position: fixed;
-  top: 90px;
-  bottom: 0;
-  left: 0;
-  right: 0;
- }
- .fc-time{
-  padding-right: 10px;
- }
+body{
+	color: #333;
+	font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+	h2{
+		font-weight: 700;
+		border-bottom: solid 2px #e7e7e7;
+	    border-top: solid 2px #e7e7e7;
+	    padding: 11px 0;
+	    margin: 32px;
+	}
+	p{
+		font-size: 18px;
+		line-height: 1.8;
+	}
+}
+header{
+	height: 70px;
+	padding-top: 24px;
+}
+li{
+	list-style: none;
+}
+.btn-default{
+	color: #fff;
+	background-color: #33691E;
+	&.btn-default:hover{
+		color: #fff;
+		background-color: #33691E;
+	}
+}
+.btn-primary{
+	color: #FFAB40;
+	background-color: #fff;
+	border-color: #FFAB40;
+	&.btn-primary:hover{
+		color: #FFAB40;
+		background-color: #fff;
+		border-color: #FFAB40;
+	}
+}

@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+    @followings = @user.following_user.where(is_deleted: false)
+    @followers = @user.follower_user.where(is_deleted: false)
   	# 退会ユーザーの情報は表示しない
   	if @user.is_deleted == true
 		  redirect_to user_path(current_user)
@@ -38,6 +40,18 @@ class UsersController < ApplicationController
   # ユーザーIDの検索結果を表示
   def search
     @users = User.all
+  end
+
+   # 自分がフォローしているユーザー一覧
+  def following
+    @user = User.find(params[:id])
+    @followings = @user.following_user.where(is_deleted: false)
+  end
+
+  # 自分をフォローしているユーザー一覧
+  def follower
+    @user = User.find(params[:id])
+    @followers = @user.follower_user.where(is_deleted: false)
   end
 
   private

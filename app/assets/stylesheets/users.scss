@@ -1,3 +1,98 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+label{
+	margin-top: 24px;
+}
+.user-show-introduction{
+  height: 40px;
+  padding: 8px;
+  margin-bottom: 32px;
+  background-color: #f5f5f5;
+  font-size: 14px;
+  overflow: scroll;
+}
+.edit-btn{
+	margin-right: 16px;
+}
+.follow-count{
+	margin-top: 24px;
+}
+.btn-info{
+	margin-left: 16px;
+}
+
+.update-btn{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.btn-primary{
+  &.follow-btn{
+    &.follow-btn:hover{
+      color: #FFAB40;
+      background-color: #fff;
+      border-color: #FFAB40;
+    }
+    &.follow-btn:active{
+      color: #FFAB40;
+      background-color: #fff;
+      border-color: #FFAB40;
+    }
+  }
+}
+.btn-info{
+  &.unfollow-btn{
+    color: #fff;
+    background-color: #FFAB40;
+    border-color: #FFAB40;
+      &.unfollow-btn:hover{
+        color: #fff;
+        background-color: #FFAB40;
+        border-color: #FFAB40;
+      }
+      &.unfollow-btnunfollow-btn:active{
+        color: #fff;
+        background-color: #FFAB40;
+        border-color: #FFAB40;
+      }
+  }
+}
+
+.relationship-list{
+  margin-bottom: 16px;
+}
+.relationship-profile-image{
+  margin-right: 16px;
+}
+.relationship-name{
+    font-size: 18px;
+    color: #333;
+}
+.relationship-name:hover{
+  text-decoration: none;
+  color: #333;
+}
+
+.search-name{
+  font-size: 18px;
+  color: #333;
+  &.search-name:hover{
+    text-decoration: none;
+    color: #333;
+  }
+}
+.search-profile-image{
+  margin: 16px 0;
+}
+
+.unsubscribe-headline{
+  margin-top: 160px;
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+.unsubscribe-btn{
+  margin-top: 40px;
+}
+

@@ -1,5 +1,5 @@
 <div class="row">
-	<h2>プロフィール編集</h2>
+	<h2 class="text-center">プロフィール編集</h2>
 </div>
 
 <%= form_for(@user) do |f| %>
@@ -17,53 +17,38 @@
 
 	<div class="row">
 		<div class="col-xs-6">
-			<table>
-				<thead>
-					<tr>
-						<th>公開情報</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><%= f.label :name, "名前" %></td>
-						<td><%= f.text_field :name, class: "form-control" %></td>
-					</tr>
-					<tr>
-						<td><%= f.label :introduction, "自己紹介" %></td>
-						<td><%= f.text_area :introduction, class: "form-control", placeholder: '50文字以内で入力してください。' %></td>
-					</tr>
-					<tr>
-						<td><%= f.label :profile_image, "プロフィール画像" %></td>
-						<td><%= f.attachment_field :profile_image %></td>
-					</tr>
-				</tbody>
-				<thead>
-					<tr>
-						<th>非公開情報</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><%= f.label :uid, "ユーザーID" %></td>
-						<td><%= f.text_field :uid, class: "form-control" %></td>
-					</tr>
-					<tr>
-						<td><%= f.label :email, "メールアドレス" %></td>
-						<td><%= f.text_field :email, class: "form-control" %></td>
-					</tr>
-				</tbody>
-			</table>
+			<h3>公開情報</h3>
+			<%= f.label :name, "名前" %>
+			<%= f.text_field :name, class: "form-control" %>
+			<%= f.label :introduction, "自己紹介" %>
+			<%= f.text_area :introduction, class: "form-control", placeholder: '50文字以内で入力してください。' %>
+			<%= f.label :profile_image, "プロフィール画像" %>
+			<%= f.attachment_field :profile_image %>
+		</div>
+
+		<div class="col-xs-6">
+			<h3>非公開情報</h3>
+			<%= f.label :uid, "ユーザーID" %>
+			<%= f.text_field :uid, class: "form-control" %>
+			<%= f.label :email, "メールアドレス" %>
+			<%= f.text_field :email, class: "form-control" %>
+			<br>
+			<div class="col-xs-offset-6">
+				<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span><span>パスワードを変更する方は、</span><%= link_to 'こちら', edit_user_registration_path %><span>から</span>
+			</div>
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="actions">
-			<%= f.submit "編集内容を保存する", class: "btn btn-default" %>
+			<%= f.submit "編集内容を保存する", class: "btn btn-default update-btn col-xs-6 col-xs-offset-3" %>
 		</div>
 	</div>
 
+	<br>
+
 	<div class="row">
-		<div class="col-xs-offset-9">
+		<div class="text-center">
 			<span>退会を希望する方は、</span><%= link_to "こちら", unsubscribe_user_path(@user.id) %><span>から</span>
 		</div>
 	</div>

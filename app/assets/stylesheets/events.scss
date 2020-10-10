@@ -1,3 +1,20 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#calendar {
+  margin: 0 auto;
+  width: 900px;
+  text-align: center;
+  position: fixed;
+  top: 90px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+ }
+ .fc-time{
+  padding-right: 10px;
+ }
+ .fc-day-header{
+ background-color: #EEEEEE;
+ }
