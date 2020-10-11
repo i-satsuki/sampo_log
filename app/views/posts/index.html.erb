@@ -7,12 +7,10 @@
 			<div class="col-xs-4">
 				<%= link_to post_path(post), class: "post_#{post.id} " do %>
 					<%= attachment_image_tag(post, :image, size: "200x200", fallback: "no_image.png") %> <br>
-					<span class="post-index-title"><%= post.title %></span>
+					<span class="post-title"><%= post.title %></span>
 				<% end %>
-				<!-- I18n.lは日時フォーマットのメソッド -->
-				(<%= I18n.l post.created_at, format: :short, class: "post-index-time" %>)
 
-				<%= render 'favorite-button', post: post %>
+				<%= render 'favorites/favorite-button', post: post %>
 			</div>
 		<% end %>
 	</div>

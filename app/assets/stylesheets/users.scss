@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// 詳細ページ
 label{
 	margin-top: 24px;
 }
@@ -13,11 +14,13 @@ label{
   font-size: 14px;
   overflow: scroll;
 }
-.edit-btn{
-	margin-right: 16px;
-}
 .follow-count{
 	margin-top: 24px;
+}
+
+// ボタン
+.edit-btn{
+  margin-right: 16px;
 }
 .btn-info{
 	margin-left: 16px;
@@ -60,6 +63,7 @@ label{
   }
 }
 
+// フォロー・フォロワー一覧
 .relationship-list{
   margin-bottom: 16px;
 }
@@ -75,6 +79,7 @@ label{
   color: #333;
 }
 
+// 検索結果ページ
 .search-name{
   font-size: 18px;
   color: #333;
@@ -87,6 +92,8 @@ label{
   margin: 16px 0;
 }
 
+
+// 退会確認ページ
 .unsubscribe-headline{
   margin-top: 160px;
   margin-bottom: 24px;
