@@ -1,0 +1,6 @@
+$(document).addEventListener('turbolinks:load', function() {
+	$// コメント送信後のコメント入力フォームを空にする
+	("textarea").val("");
+	$("#comment-area").html("<%= j(render 'index', comments: @comments ) %>");
+	$("#comment-form").html("<%= j(render 'form', comment: @comment, post: @post ) %>");
+});

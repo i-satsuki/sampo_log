@@ -33,6 +33,9 @@ class PostsController < ApplicationController
 
   def show
   	@post = Post.find(params[:id])
+    @comment = Comment.new
+    # joinsとwhereを用いて、退会済ユーザーのコメントを表示しない
+    @comments = @post.comments.order(created_at: :desc)
   end
 
   def edit

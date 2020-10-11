@@ -2,24 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.post-show-body{
-  height: 450px;
+// 詳細ページ
+.body-box{
+  height: 400px;
   padding: 20px;
   background-color: #faf9f5;
   font-size: 18px;
   overflow: scroll;
 }
-.post-show-steps{
+.steps-box{
+	display: inline-block;
 	padding: 10px;
-	border-radius: 4px;
-	color: #fff;
-	background-color: #FFAB40;
-	font-weight: 700;
+	border: #e5e5e5 solid 2px;
+	color: #333;
+}
+table {
+  width: 100%;
+}
+table td {
+  word-break : break-all;
 }
 .trash-btn{
 	margin-left: 16px;
 }
 
+// 一覧ページ
+.post-title{
+	font-size: 18px;
+	color: #333;
+	font-weight: bold;
+}
+
+// アイコン
+.glyphicon-calendar{
+	padding-right: 8px;
+	color: #333;
+}
 .glyphicon-heart{
 	padding-left: 16px;
 	font-size: 24px;
@@ -30,9 +48,14 @@
 	font-size: 24px;
 	color: #333;
 }
-
-.post-index-title{
-	font-size: 18px;
-	color: #333;
-	font-weight: bold;
+.glyphicon-comment{
+	padding-left: 16px;
+	font-size: 24px;
+	color: #BDBDBD;
+}
+.glyphicon-list{
+	padding-right: 8px;
+}
+.glyphicon-pencil{
+	padding-right: 8px;
 }

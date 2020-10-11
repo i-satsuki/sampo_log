@@ -34,18 +34,23 @@ body{
 	a:hover{
 		text-decoration: none;
 	}
+	li{
+		list-style: none;
+	}
 }
+
 header{
 	height: 70px;
 	padding-top: 24px;
 }
-li{
-	list-style: none;
+
+.btn{
+	padding: 8px 16px;
 }
 .btn-default{
 	color: #fff;
-	background-color: #33691E;
-	&.btn-default:hover{
+	background-color: #689F38;
+	&:hover{
 		color: #fff;
 		background-color: #33691E;
 	}
@@ -54,7 +59,7 @@ li{
 	color: #FFAB40;
 	background-color: #fff;
 	border-color: #FFAB40;
-	&.btn-primary:hover{
+	&:hover{
 		color: #FFAB40;
 		background-color: #fff;
 		border-color: #FFAB40;
