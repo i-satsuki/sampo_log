@@ -39,6 +39,5 @@ https://docs.google.com/spreadsheets/d/1RLvUs1QAqZtwVf8kVWFuBqa7FwHFjij_L2-yN3fu
 - イラストAC：https://www.ac-illust.com/
 - 写真AC：https://www.photo-ac.com/
 - LOGO MAKER：https://logo-maker.stores.jp/
-- ICOOON MONO：https://icooon-mono.com/
 - o-dan:https://o-dan.net/ja/
 - Material Design：https://material.io/
