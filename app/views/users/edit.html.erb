@@ -1,56 +1,59 @@
-<div class="row">
-	<h2 class="text-center">プロフィール編集</h2>
-</div>
-
-<%= form_for(@user) do |f| %>
-	<!-- エラーメッセージ表示-->
-	<% if @user.errors.any? %>
-		<div id="error_explanation">
-			<h3><%= @user.errors.count %>件のエラーが発生しました。</h3>
-			<ul>
-				<% @user.errors.full_messages.each do |message| %>
-				<li><%= message %></li>
-				<% end %>
-			</ul>
-		</div>
-	<% end %>
-
+<div class="container">
 	<div class="row">
-		<div class="col-xs-6">
-			<h3>公開情報</h3>
-			<%= f.label :name, "名前" %>
-			<%= f.text_field :name, class: "form-control" %>
-			<%= f.label :introduction, "自己紹介" %>
-			<%= f.text_area :introduction, class: "form-control", placeholder: '50文字以内で入力してください。' %>
-			<%= f.label :profile_image, "プロフィール画像" %>
-			<%= f.attachment_field :profile_image %>
-		</div>
+		<h2 class="text-center">プロフィール編集</h2>
+	</div>
 
-		<div class="col-xs-6">
-			<h3>非公開情報</h3>
-			<%= f.label :uid, "ユーザーID" %>
-			<%= f.text_field :uid, class: "form-control" %>
-			<%= f.label :email, "メールアドレス" %>
-			<%= f.text_field :email, class: "form-control" %>
-			<br>
-			<div class="col-xs-offset-6">
-				<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span><span>パスワードを変更する方は、</span><%= link_to 'こちら', edit_user_registration_path %><span>から</span>
+	<%= form_for(@user) do |f| %>
+		<!-- エラーメッセージ表示-->
+		<% if @user.errors.any? %>
+			<div id="error_explanation" class="alert alert-danger">
+				<h3><%= @user.errors.count %>件のエラーが発生しました。</h3>
+				<ul>
+					<% @user.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+		<div class="row">
+			<div class="col-xs-6">
+				<h3>公開情報</h3>
+				<%= f.label :name, "名前" %>
+				<%= f.text_field :name, class: "form-control" %>
+				<%= f.label :introduction, "自己紹介" %>
+				<%= f.text_area :introduction, class: "form-control", placeholder: '50文字以内で入力してください。' %>
+				<%= f.label :profile_image, "プロフィール画像" %>
+				<%= f.attachment_field :profile_image %>
+			</div>
+
+			<div class="col-xs-6">
+				<h3>非公開情報</h3>
+				<%= f.label :uid, "ユーザーID" %>
+				<%= f.text_field :uid, class: "form-control" %>
+				<%= f.label :email, "メールアドレス" %>
+				<%= f.text_field :email, class: "form-control" %>
+				<br>
+				<div class="col-xs-offset-5">
+					<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+					<span>パスワードを変更する方は、</span><%= link_to 'こちら', edit_user_registration_path %><span>から</span>
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="row">
-		<div class="actions">
-			<%= f.submit "編集内容を保存する", class: "btn btn-default update-btn col-xs-6 col-xs-offset-3" %>
+		<div class="row">
+			<div class="actions">
+				<%= f.submit "編集内容を保存する", class: "btn btn-default update-btn col-xs-6 col-xs-offset-3" %>
+			</div>
 		</div>
-	</div>
 
-	<br>
+		<br>
 
-	<div class="row">
-		<div class="text-center">
-			<span>退会を希望する方は、</span><%= link_to "こちら", unsubscribe_user_path(@user.id) %><span>から</span>
+		<div class="row">
+			<div class="text-center">
+				<span>退会を希望する方は、</span><%= link_to "こちら", unsubscribe_user_path(@user.id) %><span>から</span>
+			</div>
 		</div>
-	</div>
 
-<% end %>
+	<% end %>
+</div>

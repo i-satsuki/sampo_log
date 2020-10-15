@@ -2,7 +2,9 @@
 	<table class="table">
 		<thead>
 			<tr>
-				<th><i class="glyphicon glyphicon-list"></i><%= label :comment, "コメント一覧" %></th>
+				<th style="padding-left: 0;">
+					<span class="material-icons">comment</span><%= label :comment, "コメント一覧" %>
+				</th>
 			</tr>
 		</thead>
 		<% comments.each do |comment| %>
@@ -11,7 +13,7 @@
 					<td class="col-xs-4">
 						<%= link_to user_path(comment.user), class: "user_#{comment.user.id}" do %>
 							<%= attachment_image_tag comment.user, :profile_image, size: "50x50",  fallback: "no_image.png", style: "border-radius: 50%;" %>
-							<%= comment.user.name %>
+							<p class="comment-user-name"><%= comment.user.name %></p>
 						<% end %>
 					</td>
 					<td>
@@ -20,7 +22,7 @@
 					</td>
 					<td>
 						<% if comment.user == current_user %>
-							<%= link_to '削除', post_comment_path(comment.post, comment), class: 'btn btn-danger', method: :delete, remote: true %>
+							<%= link_to '削除', post_comment_path(comment.post, comment), class: 'btn btn-danger col-xs-12', method: :delete, remote: true %>
 						<% end %>
 					</td>
 				</tr>

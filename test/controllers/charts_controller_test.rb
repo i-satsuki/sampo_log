@@ -5,5 +5,4 @@ class ChartsControllerTest < ActionDispatch::IntegrationTest
     get charts_weekly_url
     assert_response :success
   end
-
 end
