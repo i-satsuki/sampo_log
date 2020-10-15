@@ -7,6 +7,6 @@ class SearchController < ApplicationController
 
   # 検索結果に退会ユーザーは表示しない
   def search_for(content)
-        User.where(uid: content, is_deleted: :false)
+    User.where(uid: content, is_deleted: :false)
   end
 end

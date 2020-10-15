@@ -1,11 +1,12 @@
-<div class="row">
-	<h2>投稿フォーム</h2>
-</div>
-<%= form_for (@post) do |f| %>
-	<%= render 'form', post: @post, f: f %>
+<div class="container">
 	<div class="row">
-		<div class="product-form">
-			<%= f.submit "記録する", class: "btn btn-default" %>
-		</div>
+		<h2 class="text-center">投稿フォーム</h2>
 	</div>
-<% end %>
+	<%= form_for (@post) do |f| %>
+		<%= render 'form', post: @post, f: f %>
+		<div class="row">
+			<%= f.submit "記録する", class: "col-xs-offset-3 col-xs-6 btn btn-default new-btn" %>
+		</div>
+	<% end %>
+</div>
+

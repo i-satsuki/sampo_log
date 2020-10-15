@@ -1,39 +1,45 @@
-<div class="row">
-  <div class="text-center">
-    <h2>
-      <%= link_to "", charts_monthly_path(:pre_preview => @target_month), class: "glyphicon glyphicon-chevron-left" %>
-      <%= "#{@target_month.year}年#{@target_month.month}月のランキング" %>
-      <%= link_to "", charts_monthly_path(:next_preview => @target_month), class: "glyphicon glyphicon-chevron-right" %>
-    </h2>
+<div class="container">
+  <div class="row">
+    <div class="text-center">
+      <h2>
+        <%= link_to "", charts_monthly_path(:pre_preview => @target_month), class: "glyphicon glyphicon-chevron-left" %>
+        <%= "#{@target_month.year}年#{@target_month.month}月のランキング" %>
+        <%= link_to "", charts_monthly_path(:next_preview => @target_month), class: "glyphicon glyphicon-chevron-right" %>
+      </h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <table class="table table-hover table-bordered text-center ranking-table">
+        <thead class="thead-light">
+          <tr>
+            <th class="text-center">順位</th>
+            <th class="text-center">ユーザー名</th>
+            <th class="text-center">合計(歩)</th>
+          </tr>
+        </thead>
+        <tbody>
+         <% @users.each_with_index do |user,i| %>
+            <tr>
+              <td class="text-center" style="vertical-align: middle;">
+                <%= i += 1 %>
+              </td>
+              <div class="form-inline">
+                <td>
+                  <%= link_to(user_path(user)) do %>
+                    <%= attachment_image_tag(user, :profile_image, size: "50x50", fallback: "no_image.png", style: "border-radius: 50%;") %>
+                    <p class="rankng-user"><%= user.name %></p>
+                  <% end %>
+                </td>
+              </div>
+              <td style="vertical-align: middle;">
+                <%= user.posts.where(created_at: Time.now.all_month).sum(:steps) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
-
-<table class="table table-hover table-bordered">
-  <thead class="thead-light">
-    <tr class="text-center">
-      <th>順位</th>
-      <th>ユーザー名</th>
-      <th>合計(歩)</th>
-    </tr>
-  </thead>
-  <tbody>
-   <% @users.each_with_index do |user,i| %>
-      <tr>
-        <td class="text-center">
-          <%= i += 1 %>
-        </td>
-        <div class="form-inline">
-          <td>
-            <%= link_to(user_path(user)) do %>
-              <%= attachment_image_tag(user, :profile_image, size: "50x50", fallback: "no_image.png") %>
-              <%= user.name %>
-            <% end %>
-          </td>
-        </div>
-        <td class="text-right">
-          <%= user.posts.where(created_at: Time.now.all_month).sum(:steps) %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>

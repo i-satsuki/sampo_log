@@ -1,47 +1,61 @@
-<div class="row">
-	<h2 class="text-center"><%= @user.name %>さんのプロフィール</h2>
-</div>
+<div class="container">
+	<div class="row">
+		<h2 class="text-center"><%= @user.name %>さんのプロフィール</h2>
+	</div>
 
-<div class="row">
-	<div class="col-xs-3">
-		<div class="text-center">
-			<%= attachment_image_tag(@user, :profile_image, size: "200x200", fallback: "no_image.png", style: "border-radius: 50%;") %>
+	<div class="row">
+		<div class="col-xs-3">
+			<div class="text-center">
+				<%= attachment_image_tag(@user, :profile_image, size: "200x200", fallback: "no_image.png", style: "border-radius: 50%;") %>
+			</div>
+
+			<div class="follow-count text-center">
+				<strong id='following-count_<%= @user.id %>'>
+					<%= link_to "#{ @followings.count }", following_user_path(@user) %>
+				</strong>
+				<span>フォロー</span>
+				<span>|</span>
+				<strong id='follower-count_<%= @user.id %>}'>
+					<%= link_to "#{ @followers.count }", follower_user_path(@user) %>
+				</strong>
+				<span>フォロワー</span> <br>
+			</div>
 		</div>
+		<div class="col-xs-9">
+			<label>自己紹介</label>
+			<p class="user-show-introduction"><%= @user.introduction %></p>
 
-		<div class="follow-count text-center">
-			<strong id='following-count_<%= @user.id %>'>
-				<%= link_to "#{ @followings.count }", following_user_path(@user) %>
-			</strong>
-			<span>フォロー</span>
-			<span>|</span>
-			<strong id='follower-count_<%= @user.id %>}'>
-				<%= link_to "#{ @followers.count }", follower_user_path(@user) %>
-			</strong>
-			<span>フォロワー</span> <br>
+			<% if @user.id == current_user.id %>
+				<%= link_to '編集する', edit_user_path(@user), class: "btn btn-default edit-btn col-xs-3" %>
+			<% end %>
+
+			<% if @user.id != current_user.id %>
+				<span id='follow-button_<%= @user.id %>'>
+					<!-- 「remote: true」を付与する事で、JavaScriptファイルを呼び出せる様になる。 -->
+					<% if current_user.following?(@user) %>
+						<%= link_to "フォロー中", user_relationships_path(@user), data: {"turbolinks" => false}, method: :delete, class: 'btn btn-success unfollow-btn col-xs-3', remote: true %>
+					<% else %>
+						<%= link_to "フォローする", user_relationships_path(@user), data: {"turbolinks" => false}, method: :post, class: 'btn btn-primary follow-btn col-xs-3', remote: true %>
+					<% end %>
+				</span>
+
+				<%= link_to '投稿リストを見る', posts_path(user: @user.id), class: "btn btn-info col-xs-3" %>
+			<% end %>
 		</div>
 	</div>
-	<div class="col-xs-9">
-		<label>自己紹介</label>
-		<p class="user-show-introduction"><%= @user.introduction %></p>
 
-		<% if @user.id == current_user.id %>
-			<%= link_to '編集する', edit_user_path(@user), class: "btn btn-default edit-btn" %>
-		<% end %>
-
-		<% if @user.id != current_user.id %>
-			<span id='follow-button_<%= @user.id %>'>
-				<!-- 「remote: true」を付与する事で、JavaScriptファイルを呼び出せる様になる。 -->
-				<% if current_user.following?(@user) %>
-					<%= link_to "フォロー中", user_relationships_path(@user), data: {"turbolinks" => false}, method: :delete, class: 'btn btn-info unfollow-btn', remote: true %>
-				<% else %>
-					<%= link_to "フォローする", user_relationships_path(@user), data: {"turbolinks" => false}, method: :post, class: 'btn btn-primary follow-btn', remote: true %>
-				<% end %>
-			</span>
-
-			<%= link_to '投稿リストを見る', posts_path(user: @user.id), class: "btn btn-info" %>
-		<% end %>
-	</div>
+	<% if @user.id == current_user.id %>
+		<div class="row">
+			<div class="col-xs-3 col-xs-offset-3 calendar">
+				<span class="material-icons">event_note</span>
+				<%= link_to 'カレンダー', events_path(current_user) %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3 col-xs-offset-3 ranking">
+				<span class="material-icons">format_list_numbered</span>
+				<%= link_to 'ランキング', charts_monthly_path(current_user) %>
+			</div>
+		</div>
+	<% end %>
 </div>
-
-
-

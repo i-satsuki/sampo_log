@@ -1,5 +1,7 @@
-<div class="row">
-	<h2 class="text-center">「<%= @content %>」の検索結果 (<%= @records.count %>件)</h2>
-</div>
+<div class="container">
+	<div class="row">
+		<h2 class="text-center">「<%= @content %>」の検索結果 (<%= @records.count %>件)</h2>
+	</div>
 
-<%= render 'users/search', users: @records, user: @user %>
+	<%= render 'users/search', users: @records, user: @user %>
+</div>

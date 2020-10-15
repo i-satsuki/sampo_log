@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/top'
   get '/search', to: 'search#search'
   get 'charts/monthly'
   get '/events', to: 'events#index'
@@ -11,20 +12,16 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
 
-  resources :users, only: [:show, :edit, :update]do
-      resource :relationships, only: [:create, :destroy]
-  		# 退会機能
-      member do
-          get "unsubscribe"
-          patch "withdraw"
-          get "following"
-          get "follower"
-      end
+  resources :users, only: [:show, :edit, :update] do
+    resource :relationships, only: [:create, :destroy]
+    # 退会機能
+    member do
+      get "unsubscribe"
+      patch "withdraw"
+      get "following"
+      get "follower"
+    end
   end
 
-
-
-  devise_scope :user do
-    root "devise/sessions#new"
-  end
+  root to: 'home#top'
 end

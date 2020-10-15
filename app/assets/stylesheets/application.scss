@@ -22,31 +22,110 @@ body{
 	font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 	h2{
 		font-weight: 700;
-		border-bottom: solid 2px #e7e7e7;
-	    border-top: solid 2px #e7e7e7;
 	    padding: 11px 0;
-	    margin: 32px;
+	    margin: 32px 0;
+	    &::after {
+		    content: "";
+		    display: block;
+		    width: 70px;
+		    height: 3px;
+		    margin: 10px auto 0 auto;
+		    background-color: #FF9800;
+	    }
 	}
 	p{
 		font-size: 18px;
 		line-height: 1.8;
 	}
-	a:hover{
-		text-decoration: none;
+	a{
+		font-size: 16px;
+		color: #0097A7;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+	span{
+		font-size: 16px;
+	}
+}
+main{
+	min-height: 75vh;
+	background: #f5f5f5;
+}
+
+// ヘッダー
+header{
+	height: 100px;
+	nav{
+		line-height: 100px;
+	}
+	a{
+		font-size: 18px;
+		color: #333;
 	}
 	li{
-		list-style: none;
+		float: left;
+	    padding: 0 16px;
+	    list-style: none;
+    }
+}
+.navbar-right{
+	a{
+		&:hover{
+			padding-bottom: 5px;
+			color: #333;
+			border-bottom: solid 3px #FFAB40;
+		}
+	}
+	.material-icons{
+		color: #FF9800;
 	}
 }
-
-header{
-	height: 70px;
-	padding-top: 24px;
+.search{
+	input{
+	 margin-top: 44px;
+	}
+}
+.material-icons{
+	padding-right: 5px;
+	color: #65676b;
+	display: inline-flex;/*←横の文字と揃える*/
+	vertical-align: middle;/*←横の文字と揃える*/
 }
 
-.btn{
-	padding: 8px 16px;
+// 入力フォーム
+input{
+	margin-top: 24px;
 }
+label{
+	margin-top: 24px;
+}
+
+// サクセスメッセージ
+#notice{
+	display: inline-block;
+	margin: 0;
+	color: #33691E;
+	background-color: #F1F8E9;
+}
+
+// フッターの位置を最下部に固定
+.wrapper{
+    position: relative;/*←相対位置*/
+    padding-bottom: 120px;/*←footerの高さ*/
+    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+}
+
+footer{
+    width: 100%;
+    color: #807171;
+    text-align: center;
+    padding: 30px 0;
+    position: absolute;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
+}
+
+// 編集、更新ボタン
 .btn-default{
 	color: #fff;
 	background-color: #689F38;
@@ -54,7 +133,15 @@ header{
 		color: #fff;
 		background-color: #33691E;
 	}
+	&.edit-btn{
+	  margin-right: 16px;
+	}
+	&.update-btn{
+	  margin-top: 40px;
+	  margin-bottom: 40px;
+	}
 }
+// フォローボタン
 .btn-primary{
 	color: #FFAB40;
 	background-color: #fff;
@@ -64,4 +151,42 @@ header{
 		background-color: #fff;
 		border-color: #FFAB40;
 	}
+	&:active{
+      color: #FFAB40;
+      background-color: #fff;
+      border-color: #FFAB40;
+    }
 }
+// ログイン、新規登録ボタン、フォローを外す
+.btn-success{
+	border-color: #FF9800;
+	background-color: #FF9800;
+	&:hover{
+		border-color: #F57C00;
+		background-color: #F57C00;
+	}
+	&:active{
+		border-color: #F57C00 !important;
+		background-color: #F57C00 !important;
+	}
+	&.btn-top-signup{
+		margin-bottom: 80px;
+	}
+	&.signup-btn{
+		margin-top: 48px;
+		margin-bottom: 24px;
+	}
+}
+// 投稿一覧ボタン
+.btn-info{
+  margin-left: 16px;
+  background-color: #8ac6d1;
+}
+// 削除、退会ボタン
+.btn-danger{
+	&.unsubscribe-btn{
+	  margin-top: 40px;
+	}
+}
+
+
