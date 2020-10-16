@@ -3,8 +3,8 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.build(comment_params)
-    @comment.user_id = current_user.id
+    @comment = current_user.comments.new(comment_params)
+    @comment.post_id = @post.id
     if @comment.save
       redirect_to request.referer, notice: "コメントを記録しました！"
     end
