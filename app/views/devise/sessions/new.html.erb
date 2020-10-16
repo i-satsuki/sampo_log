@@ -6,6 +6,12 @@
   <div class="col-xs-offset-3">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="row">
+        <div class="col-xs-8">
+          <%= content_tag(:div, flash[:alert], :id => "flash_alert", class: "alert alert-danger") if flash[:alert] %>
+        </div>
+      </div>
+
+      <div class="row">
         <div class="field">
           <div class="col-xs-4">
               <%= f.label :email, "メールアドレス" %>

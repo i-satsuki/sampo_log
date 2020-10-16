@@ -16,6 +16,8 @@ ja:
         email: メールアドレス
         password: パスワード
         uid: ユーザーID
+        current_password: "現在のパスワード"
+        password_confirmation: "確認用パスワード"
       post:
         title: タイトル
         body: 本文

@@ -15,6 +15,9 @@
 							<%= attachment_image_tag comment.user, :profile_image, size: "50x50",  fallback: "no_image.png", style: "border-radius: 50%;" %>
 							<p class="comment-user-name"><%= comment.user.name %></p>
 						<% end %>
+						<% if comment.user.is_deleted == true %>
+							<span>（退会済み）</span>
+						<% end %>
 					</td>
 					<td>
 						<p><%= comment.comment %></p>
