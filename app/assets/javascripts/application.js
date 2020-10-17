@@ -29,6 +29,21 @@ $(document).on('turbolinks:load', function () {
     },2500); //2.5秒後にロゴ含め真っ白背景をフェードアウト！
 });
 
+// ハンバーガーメニュー
+$(function() {
+    $(document).on('turbolinks:load', function () {
+    $('.hamburger').click(function() {
+        $(this).toggleClass('active');
+
+        if ($(this).hasClass('active')) {
+            $('.menu').addClass('active');
+        } else {
+            $('.menu').removeClass('active');
+        }
+    });
+});
+});
+
 // fullcalendarの設定
 $(function () {
     // 画面遷移を検知(画面表示速度を高速化させるTurbolinksによるカレンダー表示のバグを防ぐ)

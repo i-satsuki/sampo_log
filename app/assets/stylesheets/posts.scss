@@ -58,12 +58,24 @@
   overflow: scroll;
 }
 .steps-box{
+	position: relative;
 	display: inline-block;
 	padding: 10px;
-	border: #65676b solid 2px;
-	border-radius: 3px;
+	border: #B2DFDB solid 2px;
+	background-color: #B2DFDB;
+	border-radius: 15px;
 	color: #333;
+	:before {
+		content: "";
+		position: absolute;
+		top: -30px;
+		left: 50%;
+		margin-left: -15px;
+		border: 15px solid transparent;
+		border-bottom: 15px solid #B2DFDB;
+	}
 }
+
 .edit-and-destroy{
 	margin-top: 40px;
 }

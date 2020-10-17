@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="text-center">
-      <h2>
+      <h2 class="col-xs-12 chart-heading">
         <%= link_to "", charts_monthly_path(:pre_preview => @target_month), class: "glyphicon glyphicon-chevron-left" %>
         <%= "#{@target_month.year}年#{@target_month.month}月のランキング" %>
         <%= link_to "", charts_monthly_path(:next_preview => @target_month), class: "glyphicon glyphicon-chevron-right" %>
@@ -10,7 +10,7 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
+    <div class="col-sm-6 col-sm-offset-3">
       <table class="table table-hover table-bordered text-center ranking-table">
         <thead class="thead-light">
           <tr>
