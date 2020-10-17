@@ -26,7 +26,15 @@
 			<p class="user-show-introduction"><%= @user.introduction %></p>
 
 			<% if @user.id == current_user.id %>
-				<%= link_to '編集する', edit_user_path(@user), class: "btn btn-default edit-btn col-xs-3" %>
+				<% if @user.target_number == nil %>
+					<label>１週間の目標達成率</label> <br>
+					<p class="achievement_rate text-center col-xs-7">編集画面から１週間の目標歩数を設定してください。</p>
+				<% else %>
+					<label>１週間の目標達成率</label> <br>
+					<p class="achievement_rate text-center col-xs-3"><%= @achievement_rate %>％</p>
+				<% end %>
+
+				<%= link_to '編集する', edit_user_path(@user), class: "btn btn-default edit-btn col-xs-3 col-xs-offset-9" %>
 			<% end %>
 
 			<% if @user.id != current_user.id %>

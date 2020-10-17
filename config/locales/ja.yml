@@ -16,6 +16,7 @@ ja:
         email: メールアドレス
         password: パスワード
         uid: ユーザーID
+        target_number: １週間の目標歩数
         current_password: "現在のパスワード"
         password_confirmation: "確認用パスワード"
       post:

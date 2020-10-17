@@ -5,9 +5,17 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @followings = @user.following_user.where(is_deleted: false)
     @followers = @user.follower_user.where(is_deleted: false)
+
     # 退会ユーザーの情報は表示しない
     if @user.is_deleted == true
       redirect_to user_path(current_user)
+    end
+
+    # 目標達成率 (to_fで型を小数にすることで計算を可能にする。)
+    posts = Post.all.where(created_at: Time.now.all_month)
+    achievement = current_user.posts.sum(:steps)
+    if current_user.target_number != nil
+      @achievement_rate = (achievement.to_f / current_user.target_number.to_f * 100).round
     end
   end
 
@@ -57,7 +65,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :introduction, :profile_image, :is_deleted, :uid, :email)
+    params.require(:user).permit(:name, :introduction, :profile_image, :is_deleted, :uid, :email, :target_number)
   end
 
   def ensure_correct_user
