@@ -1,6 +1,6 @@
-<div class="col-xs-offset-3">
+<div class="col-sm-offset-3">
 	<% if post.errors.any? %>
-		<div class="alert alert-danger col-xs-8">
+		<div class="alert alert-danger col-sm-8">
 			<% post.errors.full_messages.each do |message| %>
 				<ul>
 					<li><%= message %></li>
@@ -10,24 +10,24 @@
 	<% end %>
 
 	<div class="row">
-		<div class="col-xs-8">
+		<div class="col-sm-8">
 			<%= f.text_field :title, placeholder: 'タイトル', class: "form-control" %>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-8">
+		<div class="col-sm-8">
 			<%= f.text_area :body, placeholder: 'その日の散歩・ウォーキングの内容や感想など', class: "form-control", rows:"8" %>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-2">
+		<div class="col-sm-2">
 			<%= f.text_field :steps, placeholder: '歩数', class: "form-control" %>
 		</div>
-		<div class="col-xs-1">
+		<div class="col-sm-1">
 			 <p class="steps">歩</p>
 		</div>
 	</div>
 	<div class="row">
-		<%= f.attachment_field :image, class: "col-xs-6" %>
+		<%= f.attachment_field :image, class: "col-sm-6" %>
 	</div>
 </div>

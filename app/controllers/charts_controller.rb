@@ -22,10 +22,10 @@ class ChartsController < ApplicationController
     # whereメソッドで1ヶ月のデータと退会していないユーザーを絞り込む
     # groupメソッドでユーザーごとにレコードをまとめる
     # orderメソッドで歩数（steps）の多い順にユーザーを並び替える
-    @users = User.joins(:posts)
-    .where(id: target_user)
-    .where(posts: { created_at: @target_month.all_month })
-    .where(users: { is_deleted: false })
-    .group(:id).order("sum(posts.steps) desc")
+    @users = User.joins(:posts).
+      where(id: target_user).
+      where(posts: { created_at: @target_month.all_month }).
+      where(users: { is_deleted: false }).
+      group(:id).order("sum(posts.steps) desc")
   end
 end

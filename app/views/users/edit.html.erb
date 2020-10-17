@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<h2 class="text-center">プロフィール編集</h2>
+		<h2 class="text-center col-xs-12">プロフィール編集</h2>
 	</div>
 
 	<%= form_for(@user) do |f| %>
@@ -16,7 +16,7 @@
 		<% end %>
 
 		<div class="row">
-			<div class="col-xs-6">
+			<div class="col-sm-6">
 				<h3>公開情報</h3>
 				<%= f.label :name, "名前" %>
 				<%= f.text_field :name, class: "form-control" %>
@@ -26,7 +26,7 @@
 				<%= f.attachment_field :profile_image %>
 			</div>
 
-			<div class="col-xs-6">
+			<div class="col-sm-6">
 				<h3>非公開情報</h3>
 				<%= f.label :uid, "ユーザーID" %>
 				<%= f.text_field :uid, class: "form-control" %>
@@ -35,7 +35,7 @@
 				<%= f.label :target_number, "１週間の目標歩数" %>
 				<%= f.text_field :target_number, class: "form-control", placeholder: '数値を入力してください。' %>
 				<br>
-				<div class="col-xs-offset-5">
+				<div class="col-sm-offset-5">
 					<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
 					<span>パスワードを変更する方は、</span><%= link_to 'こちら', edit_user_registration_path %><span>から</span>
 				</div>
@@ -44,7 +44,7 @@
 
 		<div class="row">
 			<div class="actions">
-				<%= f.submit "編集内容を保存する", class: "btn btn-default update-btn col-xs-6 col-xs-offset-3" %>
+				<%= f.submit "編集内容を保存する", class: "btn btn-default update-btn col-sm-6 col-sm-offset-3" %>
 			</div>
 		</div>
 

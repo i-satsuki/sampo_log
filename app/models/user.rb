@@ -18,7 +18,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :uid, presence: true, length: { in: 2..20 }, uniqueness: true
   validates :introduction, length: { maximum: 50 }
-  validates :target_number, numericality: {only_integer: true, greater_than: 0}
+  validates :target_number, numericality: { only_integer: true, greater_than: 0 }
 
   # ユーザーをフォローする
   def follow(user_id)

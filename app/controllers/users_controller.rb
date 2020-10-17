@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     # 目標達成率 (to_fで型を小数にすることで計算を可能にする。)
     posts = Post.all.where(created_at: Time.now.all_month)
     achievement = current_user.posts.sum(:steps)
-    if current_user.target_number != nil
+    if !current_user.target_number.nil?
       @achievement_rate = (achievement.to_f / current_user.target_number.to_f * 100).round
     end
   end
