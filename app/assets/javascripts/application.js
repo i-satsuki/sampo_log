@@ -19,6 +19,16 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+// トップ画面のアニメーション
+$(document).on('turbolinks:load', function () {
+    setTimeout(function(){
+        $('.start p').fadeIn(1600);
+    },500); //0.5秒後にロゴをフェードイン!
+    setTimeout(function(){
+        $('.start').fadeOut(500);
+    },2500); //2.5秒後にロゴ含め真っ白背景をフェードアウト！
+});
+
 // fullcalendarの設定
 $(function () {
     // 画面遷移を検知(画面表示速度を高速化させるTurbolinksによるカレンダー表示のバグを防ぐ)

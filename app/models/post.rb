@@ -7,7 +7,7 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
   validates :body, presence: true
-  validates :steps, presence: true, numericality: true
+  validates :steps, presence: true, numericality: {only_integer: true, greater_than: 0}
 
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?

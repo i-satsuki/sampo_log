@@ -8,6 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="aos.css" />
     <link rel="icon" type="image/png" href="/assets/favicon.png">
   </head>
 
@@ -20,8 +21,12 @@
       </main>
 
       <footer>
-        <p>©Sampo Log</p>
+        <p>© 2020 Sampo Log</p>
       </footer>
     </div>
+
+    <!-- アニメーションスクリプト「AOS」 -->
+    <script src="aos.js"></script>
+    <script>AOS.init();</script>
   </body>
 </html>

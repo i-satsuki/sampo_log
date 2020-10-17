@@ -1,7 +1,6 @@
 <div class="col-xs-offset-3">
 	<% if post.errors.any? %>
 		<div class="alert alert-danger col-xs-8">
-			<%= post.errors.count %>件のエラーが発生しました
 			<% post.errors.full_messages.each do |message| %>
 				<ul>
 					<li><%= message %></li>

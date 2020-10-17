@@ -17,9 +17,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html{
+	overflow: auto;
+}
 body{
 	color: #333;
 	font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+	overflow: hidden;
+	min-width: 900px;
 	h2{
 		font-weight: 700;
 	    padding: 11px 0;

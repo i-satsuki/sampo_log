@@ -1,6 +1,27 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// トップ画面のアニメーション
+.start {
+	background: #FFF;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 9000;
+}
+.start p {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+	z-index: 9999;
+	width: 280px;
+}
+
 .top{
 	h2{
 		font-size: 36px;
@@ -34,7 +55,7 @@
 	background-color: #fff;
 	img{
 		width: 400px;
-		margin: 80px auto;
+		margin: 100px auto;
 	}
 }
 .about-text{
@@ -49,4 +70,5 @@
 }
 .top-signup-text{
 	margin-top: 180px;
+	margin-bottom: 40px;
 }
