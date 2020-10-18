@@ -17,8 +17,8 @@ end
 
 User.all.each do |user|
   user.posts.create!(
-    title: 'タイトル',
-    body: 'テキストテキストテキストテキスト',
+    title: '散歩',
+    body: '今日は、近所を散歩しました。20分ぐらい歩きました。',
     steps: "8000"
   )
 end
