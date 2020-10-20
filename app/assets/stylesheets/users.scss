@@ -1,3 +1,74 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 詳細ページ
+.user-show-introduction{
+  height: 40px;
+  background-color: #fff;
+  font-size: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  border-radius: 3px;
+  overflow: scroll;
+}
+.achievement_rate{
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+.follow-count{
+	margin-top: 24px;
+}
+.calendar{
+  margin-top: 64px;
+  margin-bottom: 24px;
+  a{
+    font-size: 18px;
+    color: #333;
+    &:hover{
+      padding-bottom: 5px;
+      color: #333;
+      border-bottom: solid 3px #FFAB40;
+    }
+  }
+}
+.ranking{
+  a{
+    font-size: 18px;
+    color: #333;
+    &:hover{
+      padding-bottom: 5px;
+      color: #333;
+      border-bottom: solid 3px #FFAB40;
+    }
+  }
+}
+
+// 編集画面
+.unscribe-link{
+  margin-bottom: 40px;
+}
+
+// フォロー・フォロワー一覧
+.relationship-list{
+  margin-bottom: 16px;
+}
+.relationship-profile-image{
+  margin-right: 16px;
+}
+.relationship-name{
+    font-size: 18px;
+    color: #333;
+}
+.relationship-name:hover{
+  text-decoration: none;
+  color: #333;
+}
+
+// 退会確認ページ
+.unsubscribe-headline{
+  margin-top: 160px;
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+

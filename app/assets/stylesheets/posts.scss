@@ -1,3 +1,108 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 新規投稿ページ
+#post_title{
+	margin-top: 8px;
+}
+#post_body{
+	margin: 16px 0;
+}
+#post_steps{
+	margin-top: 0;
+}
+.step{
+	display: inline-block;
+}
+.new-btn{
+	margin: 48px 0 24px;
+}
+
+// 一覧ページ
+.post-box{
+	width: 260px;
+	padding-top: 16px;
+	margin-bottom: 24px;
+	background: #fff;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+	.heart-empty{
+		margin-left: 66px;
+	}
+	.heart{
+		margin-left: 66px;
+	}
+}
+.post-image{
+	margin-bottom: 8px;
+}
+.post-title{
+	display: inline-block;
+	font-size: 18px;
+	color: #333;
+	vertical-align: top;
+}
+.paginate{
+	margin-bottom: 40px;
+	font-size: 16px;
+}
+
+// 詳細ページ
+.body-box{
+  height: 400px;
+  padding: 20px;
+  background-color: #fffbf4;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  border-radius: 3px;
+  font-size: 18px;
+  overflow: scroll;
+}
+.steps-box{
+	position: relative;
+	display: inline-block;
+	padding: 10px;
+	border: #B2DFDB solid 2px;
+	background-color: #B2DFDB;
+	border-radius: 15px;
+	color: #333;
+	:before {
+		content: "";
+		position: absolute;
+		top: -30px;
+		left: 50%;
+		margin-left: -15px;
+		border: 15px solid transparent;
+		border-bottom: 15px solid #B2DFDB;
+	}
+}
+
+.edit-and-destroy{
+	margin-top: 40px;
+}
+.trash-btn{
+	margin-left: 16px;
+}
+table {
+  width: 100%;
+  margin-top: 32px;
+}
+table td {
+  word-break : break-all;
+}
+.comment-user-name{
+	display: inline-block;
+	padding-left: 16px;
+	font-size: 18px;
+	color: #333;
+}
+.material-icons{
+	&.comment{
+		padding-left: 16px;
+		font-size: 28px;
+	}
+}
+
+//編集ページ
+.post-update-btn{
+	margin: 48px 0 24px;
+}

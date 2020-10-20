@@ -1,2 +1,53 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="container">
+	<div class="row">
+		<h2 class="text-center col-xs-12"><%= @post.title %></h2>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-5">
+			<span class="material-icons">calendar_today</span>
+			<!-- I18n.lは日時フォーマットのメソッド -->
+			<%= I18n.l @post.created_at, format: :short, class: "post-time" %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-5 post-image">
+			<%= attachment_image_tag @post, :image, size: "450x450", fallback: "no_image.png" %> <br>
+		</div>
+
+		<div class="col-sm-7">
+			<p class="body-box"><%= @post.body %></p>
+
+			<div class="steps-box text-center">
+				<span>歩数：</span><%= @post.steps %><span>歩</span>
+			</div>
+
+			<%= render partial: 'favorites/favorite-button', locals: { post: @post } %><%= @post.favorites.count%>
+			<span class="material-icons comment">mode_comment</span><%= @post.comments.count %>
+		</div>
+	</div>
+
+	<div class="row">
+		<% if @post.user == current_user %>
+			<div class="col-sm-offset-10">
+				<div class="edit-and-destroy">
+					<%= link_to "編集する", edit_post_path(@post), class: "btn btn-default edit_post_#{@post.id}" %>
+					<%= link_to "削除する", post_path(@post), method: :delete, "data-confirm" => "OKを押すと削除されます。本当によろしいですか？", class: "btn btn-danger trash-btn" %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+
+	<div class="row">
+		<div id="comment-area">
+			<%= render partial: 'comments/index', locals: { comments: @comments } %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div id="comment-form">
+			<%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+		</div>
+	</div>
+</div>

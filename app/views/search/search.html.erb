@@ -1,2 +1,9 @@
-<h1>Search#search</h1>
-<p>Find me in app/views/search/search.html.erb</p>
+<div class="container">
+	<div class="row">
+		<h2 class="text-center col-xs-12">「<%= @content %>」の検索結果 (<%= @records.count %>件)</h2>
+	</div>
+
+	<div class="search-box">
+		<%= render 'users/search', users: @records, user: @user %>
+	</div>
+</div>

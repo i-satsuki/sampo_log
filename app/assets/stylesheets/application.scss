@@ -1,0 +1,441 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require fullcalendar
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html{
+	overflow: auto;
+}
+body{
+	color: #333;
+	font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+	overflow: hidden;
+	h2{
+		font-weight: 700;
+	    padding: 11px 0;
+	    margin: 32px 0;
+	    &::after {
+		    content: "";
+		    display: block;
+		    width: 70px;
+		    height: 3px;
+		    margin: 10px auto 0 auto;
+		    background-color: #FF9800;
+	    }
+	}
+	p{
+		font-size: 18px;
+		line-height: 1.8;
+	}
+	a{
+		font-size: 16px;
+		color: #0097A7;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+	span{
+		font-size: 16px;
+	}
+}
+main{
+	min-height: 75vh;
+	background: #f5f5f5;
+}
+.sp-br{
+	display: none;
+}
+
+// ヘッダー
+header{
+	height: 100px;
+	nav{
+		line-height: 100px;
+	}
+	a{
+		font-size: 18px;
+		color: #333;
+	}
+	li{
+		float: left;
+	    padding: 0 16px;
+	    list-style: none;
+	    line-height: 62px;
+    }
+}
+.navbar-right{
+	a{
+		&:hover{
+			padding-bottom: 5px;
+			color: #333;
+			border-bottom: solid 3px #FFAB40;
+		}
+	}
+	.material-icons{
+		color: #FF9800;
+	}
+}
+.Toggle{
+	display: none;
+}
+.search{
+	input{
+	 margin-top: 44px;
+	}
+}
+.material-icons{
+	padding-right: 5px;
+	color: #65676b;
+	display: inline-flex;/*←横の文字と揃える*/
+	vertical-align: middle;/*←横の文字と揃える*/
+}
+.menu-box{
+	display: none;
+}
+
+// 入力フォーム
+input{
+	margin-top: 24px;
+}
+label{
+	margin-top: 24px;
+}
+
+// サクセスメッセージ
+#notice{
+	display: inline-block;
+	margin: 0;
+	color: #33691E;
+	background-color: #F1F8E9;
+}
+
+// フッターの位置を最下部に固定
+.wrapper{
+    position: relative;/*←相対位置*/
+    padding-bottom: 120px;/*←footerの高さ*/
+    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+}
+
+footer{
+    width: 100%;
+    color: #807171;
+    text-align: center;
+    padding: 30px 0;
+    position: absolute;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
+}
+
+// 編集、更新ボタン
+.btn-default{
+	color: #fff;
+	background-color: #689F38;
+	&:hover{
+		color: #fff;
+		background-color: #33691E;
+	}
+	&.edit-btn{
+	  margin-right: 16px;
+	}
+	&.update-btn{
+	  margin-top: 40px;
+	  margin-bottom: 40px;
+	}
+}
+// フォローボタン
+.btn-primary{
+	color: #FFAB40;
+	background-color: #fff;
+	border-color: #FFAB40;
+}
+// ログイン、新規登録ボタン、フォローを外す
+.btn-success{
+	border-color: #FF9800;
+	background-color: #FF9800;
+	&.btn-top-signup{
+		margin-bottom: 80px;
+	}
+	&.signup-btn{
+		margin-top: 48px;
+		margin-bottom: 24px;
+	}
+}
+// クリック後のボタンの色の設定
+.btn-success:hover, .btn-success:focus,
+.btn-success:active, .btn-success:active:focus, .btn-success:active:hover, .btn-success:active.focus,
+.btn-success.active, .btn-success.active:focus, .btn-success.active:hover, .btn-success.active.focus,
+.open > .dropdown-toggle.btn-success,
+.open > .dropdown-toggle.btn-success:hover,
+.open > .dropdown-toggle.btn-success:focus,
+.open > .dropdown-toggle.btn-success.focus,
+.btn-success.disabled:hover, .btn-success[disabled]:hover, fieldset[disabled] .btn-success:hover,
+.btn-success.disabled:focus, .btn-success[disabled]:focus, fieldset[disabled] .btn-success:focus,
+.btn-success.disabled.focus, .btn-success[disabled].focus, fieldset[disabled] .btn-success.focus {
+    background: #F57C00;
+    color: #fff;
+    border-color: #F57C00;
+}
+
+.btn-primary:hover, .btn-primary:focus,
+.btn-primary:active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary:active.focus,
+.btn-primary.active, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary,
+.open > .dropdown-toggle.btn-primary:hover,
+.open > .dropdown-toggle.btn-primary:focus,
+.open > .dropdown-toggle.btn-primary.focus,
+.btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary.focus {
+    background: #fff;
+    color: #F57C00;
+    border-color: #FFAB40;
+}
+
+// 投稿一覧ボタン
+.btn-info{
+  margin-left: 16px;
+  background-color: #8ac6d1;
+}
+// 削除、退会ボタン
+.btn-danger{
+	&.unsubscribe-btn{
+	  margin-top: 40px;
+	}
+}
+
+// レスポンシブ
+@media screen and (max-width: 768px){
+	.unsubscribe-headline{
+		margin-top: 0;
+	}
+	.sp-br{
+		display: block;
+	}
+	.chart-heading{
+		font-size: 18px;
+	}
+	#calendar {
+		width: 100%;
+		margin: 0 auto;
+		h2{
+			padding-left: 0;
+		}
+		span{
+			font-size: 10px;
+		}
+		.fc-time{
+			display: none;
+		}
+	}
+	.follower{
+		margin: 24px auto;
+		text-align: center;
+	}
+	.following{
+		margin: 24px auto;
+		text-align: center;
+	}
+	.ranking{
+		margin-bottom: 24px;
+	}
+	.search-box{
+		margin-bottom: 24px;
+	}
+	.post-box{
+		margin: 24px auto;
+	}
+	.new-btn{
+	 	margin-bottom: 24px;
+	}
+	.post-image{
+		img{
+			width: 505px;
+		}
+	}
+	.post-update-btn{
+		margin: 24px auto;
+	}
+	#new_user{
+		text-align: center;
+	}
+	.signup-btn{
+		padding: 6px 60px;
+	}
+	.top-title{
+		padding-right: 0;
+	}
+	.about{
+		img{
+			display: none;
+		}
+		p{
+			margin-bottom: 40px;
+		}
+	}
+	.about-text{
+		text-align: center;
+	}
+	.top-signup-image{
+		display: none;
+	}
+	.top-signup-text{
+		margin-top: 0;
+	}
+	.top-signup-btn{
+		margin-bottom: 24px;
+	}
+	.navbar-right{
+		.material-icons{
+			display: none;
+		}
+	}
+	.search{
+		position: absolute;
+		left : 250px;
+		top   : 2px;
+		width : 42px;
+		height: 42px;
+		form{
+			width: 200px;
+		}
+	}
+	.navbar-left{
+		float: left;
+	}
+	.hamburger {
+	  display : block;
+	  position: absolute;
+	  z-index : 3;
+	  right : 13px;
+	  top   : 35px;
+	  width : 42px;
+	  height: 42px;
+	  cursor: pointer;
+	  text-align: center;
+	}
+	.hamburger {
+		span {
+			display : block;
+			position: absolute;
+			width   : 30px;
+			height  : 2px ;
+			left    : 6px;
+			background : #555;
+			-webkit-transition: 0.3s ease-in-out;
+			-moz-transition   : 0.3s ease-in-out;
+			transition        : 0.3s ease-in-out;
+		}
+	}
+	.hamburger{
+		span:nth-child(1) {
+	  		top: 10px;
+  		}
+	}
+	.hamburger{
+		span:nth-child(2) {
+	  		top: 20px;
+  		}
+	}
+	.hamburger{
+		span:nth-child(3) {
+			top: 30px;
+		}
+	}
+	.hamburger.active{
+		span:nth-child(1) {
+			top : 16px;
+			left: 6px;
+			background :#fff;
+			-webkit-transform: rotate(-45deg);
+			-moz-transform   : rotate(-45deg);
+			transform        : rotate(-45deg);
+		}
+	}
+
+	.hamburger.active span:nth-child(2),
+	.hamburger.active span:nth-child(3) {
+	  top: 16px;
+	  background :#fff;
+	  -webkit-transform: rotate(45deg);
+	  -moz-transform   : rotate(45deg);
+	  transform        : rotate(45deg);
+	}
+
+	.menu {
+	  display: none;
+	  position: fixed;
+	  z-index : 2;
+	  top  : 0;
+	  left : 0;
+	  color: #fff;
+	  background: rgba(0,0,0,0.7);
+	  text-align: center;
+	  width: 100%;
+	  opacity: 0;
+	  transition: opacity .6s ease, visibility .6s ease;
+	}
+
+	.menu{
+		ul {
+			margin: 0 auto;
+			padding: 0;
+			width: 100%;
+		}
+	}
+
+	.menu{
+		ul{
+			li {
+				list-style-type: none;
+				padding: 0;
+				width: 100%;
+				transition: .4s all;
+			}
+		}
+	}
+	.menu{
+		ul{
+			li:last-child {
+	  			padding-bottom: 0;
+			}
+		}
+	}
+	.menu{
+		ul{
+			li:hover{
+	  			background :#ddd;
+  			}
+		}
+	}
+	.menu{
+		ul{
+			li{
+				a {
+					display: block;
+					color: #fff;
+					padding: 1em 0;
+					text-decoration :none;
+				}
+			}
+		}
+	}
+
+	/* このクラスを、jQueryで付与・削除する */
+	.menu.active {
+	  opacity: 100;
+	  display: block;
+	}
+}

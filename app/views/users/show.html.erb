@@ -1,2 +1,69 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+	<div class="row">
+		<h2 class="text-center col-xs-12"><%= @user.name %>さんのプロフィール</h2>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-3">
+			<div class="text-center">
+				<%= attachment_image_tag(@user, :profile_image, size: "200x200", fallback: "no_image.png", style: "border-radius: 50%;") %>
+			</div>
+
+			<div class="follow-count text-center">
+				<strong id='following-count_<%= @user.id %>'>
+					<%= link_to "#{ @followings.count }", following_user_path(@user) %>
+				</strong>
+				<span>フォロー</span>
+				<span>|</span>
+				<strong id='follower-count_<%= @user.id %>}'>
+					<%= link_to "#{ @followers.count }", follower_user_path(@user) %>
+				</strong>
+				<span>フォロワー</span> <br>
+			</div>
+		</div>
+		<div class="col-sm-9">
+			<label>自己紹介</label>
+			<p class="user-show-introduction"><%= @user.introduction %></p>
+
+			<% if @user.id == current_user.id %>
+				<% if @user.target_number == nil %>
+					<label>１週間の目標達成率</label> <br>
+					<p class="achievement_rate text-center col-sm-7">編集画面から１週間の目標歩数を設定してください。</p>
+				<% else %>
+					<label>１週間の目標達成率</label> <br>
+					<p class="achievement_rate text-center col-sm-3"><%= @achievement_rate %>％</p>
+				<% end %>
+
+				<%= link_to '編集する', edit_user_path(@user), class: "btn btn-default edit-btn col-sm-3 col-sm-offset-9" %>
+			<% end %>
+
+			<% if @user.id != current_user.id %>
+				<span id='follow-button_<%= @user.id %>'>
+					<!-- 「remote: true」を付与する事で、JavaScriptファイルを呼び出せる様になる。 -->
+					<% if current_user.following?(@user) %>
+						<%= link_to "フォロー中", user_relationships_path(@user), data: {"turbolinks" => false}, method: :delete, class: 'btn btn-success unfollow-btn col-sm-3', remote: true %>
+					<% else %>
+						<%= link_to "フォローする", user_relationships_path(@user), data: {"turbolinks" => false}, method: :post, class: 'btn btn-primary follow-btn col-sm-3', remote: true %>
+					<% end %>
+				</span>
+
+				<%= link_to '投稿リストを見る', posts_path(user: @user.id), class: "btn btn-info col-sm-3" %>
+			<% end %>
+		</div>
+	</div>
+
+	<% if @user.id == current_user.id %>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-3 calendar">
+				<span class="material-icons">event_note</span>
+				<%= link_to 'カレンダー', events_path(current_user) %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-3 ranking">
+				<span class="material-icons">format_list_numbered</span>
+				<%= link_to 'ランキング', charts_monthly_path(current_user) %>
+			</div>
+		</div>
+	<% end %>
+</div>

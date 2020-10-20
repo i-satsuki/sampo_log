@@ -1,0 +1,10 @@
+<%= form_with(model:[post, comment], data: {remote: true}) do |f| %>
+	<div class="col-xs-12">
+		<span class="material-icons">add_comment</span></span><%= f.label :comment, "コメントする" %> <br>
+		<%= f.text_area :comment, size: "90x5", class: "form-control", placeholder: "コメントを入力してください。"  %> <br>
+	</div>
+
+	<div class="col-xs-12 comment-submit">
+		 <%= f.submit '送信', class: "btn btn-default col-xs-3" %>
+	</div>
+<% end %>
