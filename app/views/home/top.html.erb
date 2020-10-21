@@ -1,11 +1,11 @@
 <!-- 始めにアニメーションで表示させるロゴ -->
 <div class="start">
-    <p><img src="/assets/logo_silhouette.jpg" alt="" style="height: 70px;"><img src="/assets/logo.png" alt=""></p>
+    <p><img src="<%= asset_path 'logo_silhouette.jpg' %>" style="height: 70px;"><img src="<%= asset_path 'logo.png' %>"></p>
 </div>
 <!-- 始めにアニメーションで表示させるロゴ -->
 
 <div class="top">
-  <div class="top-image" style="background-image: image-url(/assets/top1.jpg)">
+  <div class="top-image">
     <h1 class="top-title">歩く習慣を楽しく</h1>
     <h1 class="top-title top-title-bottom">身につけよう</h1>
   </div>
@@ -32,7 +32,7 @@
           </p>
         </div>
         <div class="col-sm-4">
-          <img src="/assets/about1.png">
+          <img src="<%= asset_path 'about1.png' %>">
         </div>
       </div>
     </div>
@@ -40,7 +40,7 @@
     <div class="row">
       <div data-aos="flip-left" data-aos-once=true data-aos-duration="1500">
         <div class="col-sm-4 col-sm-offset-2 text-center">
-          <img src="/assets/about2.png">
+          <img src="<%= asset_path 'about2.png' %>">
         </div>
         <div class="col-sm-5 about-text">
           <h3>ランキング</h3>
@@ -64,7 +64,7 @@
           </p>
         </div>
         <div class="col-sm-6">
-          <img src="/assets/about4.png" style="margin-top: 190px">
+          <img src="<%= asset_path 'about4.png' %>" style="margin-top: 190px">
         </div>
       </div>
     </div>
@@ -72,7 +72,7 @@
     <div class="row">
       <div data-aos="flip-left" data-aos-once=true data-aos-duration="1500">
         <div class="col-sm-4 col-sm-offset-2 text-center">
-          <img src="/assets/about3.png">
+          <img src="<%= asset_path 'about3.png' %>">
         </div>
         <div class="col-sm-6 about-text">
           <h3>カレンダー</h3>
@@ -100,7 +100,7 @@
         </div>
       </div>
       <div data-aos="fade-down" data-aos-once=true data-aos-duration="2000">
-      <img src="/assets/img.png" class="col-sm-6 top-signup-image">
+      <img src="<%= asset_path 'img.png' %>" class="col-sm-6 top-signup-image">
     </div>
     </div>
 </div>
