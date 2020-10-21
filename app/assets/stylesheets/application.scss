@@ -76,7 +76,12 @@ header{
 	    list-style: none;
 	    line-height: 62px;
     }
+    img{
+		height: 75px;
+	}
+
 }
+
 .navbar-right{
 	a{
 		&:hover{

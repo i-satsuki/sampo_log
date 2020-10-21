@@ -11,6 +11,9 @@
 	height: 100%;
 	width: 100%;
 	z-index: 9000;
+	img{
+		height: 75px;
+	}
 }
 .start p {
 	position: fixed;
@@ -67,6 +70,9 @@
 }
 .top-signup-image{
 	margin-bottom: 24px;
+	img{
+		width: 800px;
+	}
 }
 .top-signup-text{
 	margin-top: 180px;

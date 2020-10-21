@@ -1,6 +1,6 @@
 <!-- 始めにアニメーションで表示させるロゴ -->
 <div class="start">
-    <p><img src="<%= asset_path 'logo_silhouette.jpg' %>" style="height: 70px;"><img src="<%= asset_path 'logo.png' %>"></p>
+    <p><%= image_tag asset_path 'logo_silhouette.jpg' %><%= image_tag asset_path 'logo.png' %></p>
 </div>
 <!-- 始めにアニメーションで表示させるロゴ -->
 
@@ -32,7 +32,7 @@
           </p>
         </div>
         <div class="col-sm-4">
-          <img src="<%= asset_path 'about1.png' %>">
+          <%= image_tag asset_path 'about1.png' %>
         </div>
       </div>
     </div>
@@ -40,7 +40,7 @@
     <div class="row">
       <div data-aos="flip-left" data-aos-once=true data-aos-duration="1500">
         <div class="col-sm-4 col-sm-offset-2 text-center">
-          <img src="<%= asset_path 'about2.png' %>">
+          <%= image_tag asset_path 'about2.png' %>
         </div>
         <div class="col-sm-5 about-text">
           <h3>ランキング</h3>
@@ -64,7 +64,7 @@
           </p>
         </div>
         <div class="col-sm-6">
-          <img src="<%= asset_path 'about4.png' %>" style="margin-top: 190px">
+          <%= image_tag asset_path 'about4.png' %>
         </div>
       </div>
     </div>
@@ -72,7 +72,7 @@
     <div class="row">
       <div data-aos="flip-left" data-aos-once=true data-aos-duration="1500">
         <div class="col-sm-4 col-sm-offset-2 text-center">
-          <img src="<%= asset_path 'about3.png' %>">
+          <%= image_tag asset_path 'about3.png' %>
         </div>
         <div class="col-sm-6 about-text">
           <h3>カレンダー</h3>
@@ -100,7 +100,9 @@
         </div>
       </div>
       <div data-aos="fade-down" data-aos-once=true data-aos-duration="2000">
-      <img src="<%= asset_path 'img.png' %>" class="col-sm-6 top-signup-image">
-    </div>
+        <div class="top-signup-image col-sm-6">
+          <%= image_tag asset_path 'img.png'%>
+        </div>
+      </div>
     </div>
 </div>

@@ -2,8 +2,8 @@
   <div class="container">
     <nav class="nav navbar-nav navbar-left">
       <%= link_to root_path do %>
-        <img src="<%= asset_path 'logo_silhouette.jpg' %>" alt="Logo" style="height: 75px;">
-        <img src="<%= asset_path 'logo.png' %>" alt="Logo" style="height: 75px;">
+        <%= image_tag asset_path 'logo_silhouette.jpg' %>
+        <%= image_tag asset_path 'logo.png' %>
       <% end %>
     </nav>
 
