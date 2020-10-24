@@ -254,7 +254,7 @@ footer{
 		text-align: center;
 	}
 	.ranking{
-		margin-bottom: 24px;
+		margin-bottom: 80px;
 	}
 	.search-box{
 		margin-bottom: 24px;
@@ -279,6 +279,9 @@ footer{
 	.signup-btn{
 		padding: 6px 60px;
 	}
+	.login-link{
+		margin-bottom: 80px;
+	}
 	.top-title{
 		padding-right: 0;
 	}
@@ -292,6 +295,9 @@ footer{
 	}
 	.about-text{
 		text-align: center;
+		&.about-text-bottom{
+			margin-bottom: 160px;
+		}
 	}
 	.top-signup-image{
 		display: none;
@@ -300,7 +306,7 @@ footer{
 		margin-top: 0;
 	}
 	.top-signup-btn{
-		margin-bottom: 24px;
+		margin-bottom: 80px;
 	}
 	.navbar-right{
 		.material-icons{
