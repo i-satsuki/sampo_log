@@ -1,0 +1,5 @@
+$(document).addEventListener('turbolinks:load', function() {
+	$("#follow-button_<%= @user.id %>").html("<%= j(render 'users/follow-button', user: @user) %>");
+	$("#follower-count_<%= @user.id %>").html('<%= link_to "#{ @user.followed.count }", users_follower_path(@user) %>');
+	$("#following-count_<%= current_user.id %>").html('<%= link_to "#{ current_user.follower.count }", users_following_path(@user) %>');
+});

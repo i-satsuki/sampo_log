@@ -1,0 +1,15 @@
+<div class="container">
+	<% if current_user.id == @post.user.id %>
+		<div class="row">
+			<h2 class="text-center col-xs-12">編集</h2>
+		</div>
+		<div class="row">
+			<%= form_for (@post) do |f| %>
+				<%= render 'form', post: @post, f: f %>
+				<div class="product-form col-xs-offset-3">
+				  <%= f.submit "編集内容を保存する", class: "btn btn-default col-xs-8 post-update-btn" %>
+				</div>
+			<% end %>
+		</div>
+	<% end %>
+</div>

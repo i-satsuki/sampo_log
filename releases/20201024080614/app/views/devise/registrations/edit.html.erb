@@ -1,0 +1,46 @@
+<div class="container">
+  <section class="inner">
+    <div class="row">
+      <h2 class="section-ttl text-center col-xs-12">パスワード編集</h2>
+    </div>
+
+    <div class="col-xs-offset-3">
+         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+         <div class="row">
+           <div class="col-xs-8">
+              <%= render "devise/shared/error_messages", resource: resource %>
+           </div>
+         </div>
+
+        <div class="field mb2 row">
+          <div class="col-xs-4">
+            <%= f.label :current_password, "現在のパスワード" %>
+          </div>
+          <%= f.password_field :current_password, autocomplete: "current-password", class: "col-xs-4" %>
+        </div>
+
+        <div class="field mb2 row">
+          <div class="col-xs-4">
+            <%= f.label :password, "新しいパスワード(#{@minimum_password_length}文字以上)" %>
+          </div>
+           <%= f.password_field :password, autocomplete: "new-password", class: "col-xs-4" %>
+        </div>
+
+        <div class="field mb2 row">
+          <div class="col-xs-4">
+            <%= f.label :password_confirmation, "新しいパスワード(確認用)" %>
+          </div>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "col-xs-4" %>
+        </div>
+
+        <div class="row">
+          <div class="actions">
+            <%= f.submit "パスワード更新", class: "col-xs-8 btn btn-success signup-btn" %>
+          </div>
+        </div>
+      <% end %>
+
+      <%= link_to "Back", :back %>
+    </div>
+  </section>
+</div>

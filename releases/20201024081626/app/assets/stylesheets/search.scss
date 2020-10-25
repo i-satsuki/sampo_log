@@ -1,0 +1,16 @@
+// Place all the styles related to the search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 検索結果ページ
+.search-name{
+  font-size: 24px;
+  color: #333;
+  &.search-name:hover{
+    text-decoration: none;
+    color: #333;
+  }
+}
+.search-profile-image{
+  margin: 80px 0 24px;
+}

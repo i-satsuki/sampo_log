@@ -1,0 +1,8 @@
+$(document).addEventListener('turbolinks:load', function() {
+	// フォローボタンを非同期で処理
+	$("#follow-button_<%= @user.id %>").html("<%= j(render 'users/follow-button', user: @user) %>");
+	 // フォロワーカウント数を非同期で処理
+	$("#follower-count_<%= @user.id %>").html('<%= link_to "#{ @user.followed.count }", users_follower_path(@user) %>');
+	// フォロワー中カウント数を非同期で処理
+	$("#following-count_<%= current_user.id %>").html('<%= link_to "#{ current_user.follower.count }", users_following_path(@user) %>');
+});

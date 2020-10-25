@@ -1,0 +1,12 @@
+<div class="container">
+	<div class="row">
+		<h2 class="text-center col-xs-12">投稿フォーム</h2>
+	</div>
+	<%= form_for (@post) do |f| %>
+		<%= render 'form', post: @post, f: f %>
+		<div class="row">
+			<%= f.submit "記録する", class: "col-xs-offset-3 col-xs-6 btn btn-default new-btn" %>
+		</div>
+	<% end %>
+</div>
+

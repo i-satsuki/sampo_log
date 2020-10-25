@@ -1,0 +1,11 @@
+<span id = "favorite-<%= post.id %>">
+	<% if post.favorited_by?(current_user) %>
+		<%= link_to post_favorites_path(post), method: :delete, data: {"turbolinks" => false}, remote: true do %>
+	  		<span class="material-icons heart">favorite</span>
+		<% end %>
+	<% else %>
+		<%= link_to post_favorites_path(post), method: :post, data: {"turbolinks" => false}, remote: true do %>
+	 		<span class="material-icons heart-empty">favorite_border</span>
+		<% end %>
+	<% end %>
+</span>
