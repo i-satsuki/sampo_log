@@ -1,0 +1,80 @@
+=== puma startup: 2020-10-22 08:55:17 +0000 ===
+bundler: failed to load command: puma (/home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/bin/puma)
+Errno::ENOENT: No such file or directory - connect(2) for /home/ec2-user/sampo-log/shared/tmp/sockets/puma.sock
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:371:in `initialize'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:371:in `new'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:371:in `add_unix_listener'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:141:in `block in parse'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:90:in `each'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:90:in `parse'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/runner.rb:153:in `load_and_bind'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/single.rb:98:in `run'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/launcher.rb:186:in `run'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/cli.rb:80:in `run'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/bin/puma:10:in `<top (required)>'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/bin/puma:23:in `load'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/bin/puma:23:in `<top (required)>'
+=== puma startup: 2020-10-23 07:34:10 +0000 ===
+bundler: failed to load command: puma (/home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/bin/puma)
+Errno::ENOENT: No such file or directory - connect(2) for /home/ec2-user/sampo-log/shared/tmp/sockets/puma.sock
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:371:in `initialize'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:371:in `new'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:371:in `add_unix_listener'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:141:in `block in parse'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:90:in `each'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:90:in `parse'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/runner.rb:153:in `load_and_bind'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/single.rb:98:in `run'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/launcher.rb:186:in `run'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/cli.rb:80:in `run'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/bin/puma:10:in `<top (required)>'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/bin/puma:23:in `load'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/bin/puma:23:in `<top (required)>'
+=== puma startup: 2020-10-24 08:06:31 +0000 ===
+bundler: failed to load command: puma (/home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/bin/puma)
+Errno::ENOENT: No such file or directory - connect(2) for /home/ec2-user/sampo-log/shared/tmp/sockets/puma.sock
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:371:in `initialize'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:371:in `new'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:371:in `add_unix_listener'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:141:in `block in parse'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:90:in `each'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:90:in `parse'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/runner.rb:153:in `load_and_bind'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/single.rb:98:in `run'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/launcher.rb:186:in `run'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/cli.rb:80:in `run'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/bin/puma:10:in `<top (required)>'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/bin/puma:23:in `load'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/bin/puma:23:in `<top (required)>'
+=== puma startup: 2020-10-24 08:16:36 +0000 ===
+bundler: failed to load command: puma (/home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/bin/puma)
+Errno::ENOENT: No such file or directory - connect(2) for /home/ec2-user/sampo-log/shared/tmp/sockets/puma.sock
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:371:in `initialize'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:371:in `new'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:371:in `add_unix_listener'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:141:in `block in parse'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:90:in `each'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:90:in `parse'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/runner.rb:153:in `load_and_bind'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/single.rb:98:in `run'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/launcher.rb:186:in `run'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/cli.rb:80:in `run'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/bin/puma:10:in `<top (required)>'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/bin/puma:23:in `load'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/bin/puma:23:in `<top (required)>'
+=== puma startup: 2020-10-25 06:30:55 +0000 ===
+bundler: failed to load command: puma (/home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/bin/puma)
+Errno::ENOENT: No such file or directory - connect(2) for /home/ec2-user/sampo-log/shared/tmp/sockets/puma.sock
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:371:in `initialize'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:371:in `new'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:371:in `add_unix_listener'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:141:in `block in parse'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:90:in `each'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/binder.rb:90:in `parse'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/runner.rb:153:in `load_and_bind'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/single.rb:98:in `run'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/launcher.rb:186:in `run'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/lib/puma/cli.rb:80:in `run'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/gems/puma-3.12.6/bin/puma:10:in `<top (required)>'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/bin/puma:23:in `load'
+  /home/ec2-user/sampo-log/shared/bundle/ruby/2.5.0/bin/puma:23:in `<top (required)>'

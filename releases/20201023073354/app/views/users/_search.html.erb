@@ -1,0 +1,14 @@
+<% users.each do |user| %>
+	<div class="row">
+		<div class="text-center">
+			<%= link_to user_path(user) do %>
+				<%= attachment_image_tag(user, :profile_image, size: "200x200", fallback: "no_image.png", style: "border-radius: 50%;", class: "search-profile-image") %>
+			<% end %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="text-center">
+			<%= link_to user.name, user_path(user), class: "search-name" %>
+		</div>
+	</div>
+<% end %>

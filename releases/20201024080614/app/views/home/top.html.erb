@@ -1,0 +1,108 @@
+<!-- 始めにアニメーションで表示させるロゴ -->
+<div class="start">
+    <p><%= image_tag 'logo_silhouette.jpg' %><%= image_tag 'logo.png' %></p>
+</div>
+<!-- 始めにアニメーションで表示させるロゴ -->
+
+<div class="top">
+  <div class="top-image">
+    <h1 class="top-title">歩く習慣を楽しく</h1>
+    <h1 class="top-title top-title-bottom">身につけよう</h1>
+  </div>
+
+  <div class="about">
+    <div class="row">
+      <h2 class="text-center">Sampo Logとは？</h2>
+      <p class="text-center">
+        日々の散歩やウォーキングを <br class="sp-br">
+        簡単に記録できるサイトです。 <br>
+        運動が苦手な方も、<br class="sp-br">
+        無理なく続けることができます。
+      </p>
+    </div>
+
+     <div class="row">
+      <div data-aos="flip-right" data-aos-once=true data-aos-duration="1500">
+        <div class="col-sm-3 col-sm-offset-3 about-text">
+          <h3>記録する</h3>
+          <p>
+            歩いた距離、体調、景色など<br>
+            思い出として残したいことを <br>
+            自由に記録することができます。
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <%= image_tag 'about1.png' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div data-aos="flip-left" data-aos-once=true data-aos-duration="1500">
+        <div class="col-sm-4 col-sm-offset-2 text-center">
+          <%= image_tag 'about2.png' %>
+        </div>
+        <div class="col-sm-5 about-text">
+          <h3>ランキング</h3>
+          <p>
+            歩数のランキングにより <br>
+            フォローしたユーザーの歩数も <br>
+            確認することができます。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div data-aos="flip-right" data-aos-once=true data-aos-duration="1500">
+        <div class="col-sm-3 col-sm-offset-3 about-text">
+          <h3>目標を数値化する</h3>
+          <p>
+            目標の歩数を設定することにより <br>
+            １週間の目標達成率が <br>
+            自動で計算されます。
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <%= image_tag 'about4.png' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div data-aos="flip-left" data-aos-once=true data-aos-duration="1500">
+        <div class="col-sm-4 col-sm-offset-2 text-center">
+          <%= image_tag 'about3.png' %>
+        </div>
+        <div class="col-sm-6 about-text about-text-bottom">
+          <h3>カレンダー</h3>
+          <p>
+            入力された歩数はカレンダーで<br>
+            簡単に確認することができます。 <br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="row">
+      <h2 class="text-center">さっそく始めよう</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <p class="text-center top-signup-text" >
+          新規登録ですぐに利用できます。 <br>
+          まずは気軽に始めてみませんか？
+        </p>
+        <div data-aos="fade-up" data-aos-once=true data-aos-duration="2000">
+          <%= link_to "いますぐ新規登録", new_user_registration_path, class: "btn btn-success col-xs-offset-3 col-xs-6 top-signup-btn" %>
+        </div>
+      </div>
+      <div data-aos="fade-down" data-aos-once=true data-aos-duration="2000">
+        <div class="top-signup-image col-sm-6">
+          <%= image_tag 'img.png' %>
+        </div>
+      </div>
+    </div>
+</div>

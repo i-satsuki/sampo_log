@@ -1,0 +1,5 @@
+if (location.pathname == '/posts') {
+  $("#favorite-<%= post.id %>").html("<%= j(render 'posts/favorite-button',  post: post ) %>")
+} else {
+  $("#favorite-<%= post.id %>").html("<%= j(render 'posts/favorite-button',  post: @post ) %>")
+}

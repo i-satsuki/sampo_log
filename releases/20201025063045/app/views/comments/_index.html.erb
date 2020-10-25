@@ -1,0 +1,35 @@
+<div class="col-xs-12">
+	<table class="table">
+		<thead>
+			<tr>
+				<th style="padding-left: 0;">
+					<span class="material-icons">comment</span><%= label :comment, "コメント一覧" %>
+				</th>
+			</tr>
+		</thead>
+		<% comments.each do |comment| %>
+			<tbody>
+				<tr>
+					<td class="col-xs-4">
+						<%= link_to user_path(comment.user), class: "user_#{comment.user.id}" do %>
+							<%= attachment_image_tag comment.user, :profile_image, size: "50x50",  fallback: "no_image.png", style: "border-radius: 50%;" %>
+							<p class="comment-user-name"><%= comment.user.name %></p>
+						<% end %>
+						<% if comment.user.is_deleted == true %>
+							<span>（退会済み）</span>
+						<% end %>
+					</td>
+					<td>
+						<p><%= comment.comment %></p>
+						(<%= I18n.l comment.created_at, format: :short %>)
+					</td>
+					<td>
+						<% if comment.user == current_user %>
+							<%= link_to '削除', post_comment_path(comment.post, comment), class: 'btn btn-danger col-xs-12', method: :delete, remote: true %>
+						<% end %>
+					</td>
+				</tr>
+			</tbody>
+		<% end %>
+	</table>
+</div>
