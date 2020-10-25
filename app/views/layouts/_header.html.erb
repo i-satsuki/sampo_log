@@ -12,8 +12,8 @@
          <ul class="list-group list-group-horizontal">
              <% if user_signed_in? %>
               <li><span class="material-icons">account_circle</span><%= link_to 'マイページ',user_path(current_user) %></li>
-              <li><span class="material-icons">add_photo_alternate</span><%= link_to '投稿する',new_post_path(current_user) %></li>
-              <li><span class="material-icons">view_module</span><%= link_to '投稿一覧',posts_path %></li>
+              <li><span class="material-icons">add_photo_alternate</span><%= link_to '投稿する',new_post_path %></li>
+              <li><span class="material-icons">view_module</span><%= link_to '投稿リスト',posts_path %></li>
               <li><span class="material-icons">exit_to_app</span><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
             <% else %>
               <li><span class="material-icons">how_to_reg</span><%= link_to '無料会員登録', new_user_registration_path,class: 'sign_up' %></li>
