@@ -9,7 +9,7 @@
 					<div class="post-box text-center">
 						<%= link_to post_path(post), class: "post_#{post.id} " do %>
 							<%= attachment_image_tag(post, :image, size: "200x200", fallback: "no_image.png", class: "post-image") %> <br>
-							<p class="post-title"><%= post.title %></p>
+							<p class="post-title col-sm-offset-1 col-sm-6"><%= post.title %></p>
 						<% end %>
 						<%= render 'favorites/favorite-button', post: post %>
 					</div>
