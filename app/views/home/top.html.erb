@@ -6,79 +6,60 @@
 
 <div class="top">
   <div class="top-image">
-    <h1 class="top-title">歩く習慣を楽しく</h1>
-    <h1 class="top-title top-title-bottom">身につけよう</h1>
+    <h1 class="top-title">歩く習慣を楽しく <br> 身につけよう</h1>
   </div>
 
   <div class="about">
     <div class="row">
       <h2 class="text-center">Sampo Logとは？</h2>
-      <p class="text-center">
+      <p class="text-center about-text">
         日々の散歩やウォーキングを <br class="sp-br">
         簡単に記録できるサイトです。 <br>
-        運動が苦手な方も、<br class="sp-br">
-        無理なく続けることができます。
+        歩いた距離、体調、景色など<br class="sp-br">
+        自由に記録することができます。<br>
       </p>
     </div>
-
-     <div class="row">
-      <div data-aos="flip-right" data-aos-once=true data-aos-duration="1500">
-        <div class="col-sm-3 col-sm-offset-3 about-text">
-          <h3>記録する</h3>
-          <p>
-            歩いた距離、体調、景色など<br>
-            思い出として残したいことを <br>
-            自由に記録することができます。
-          </p>
-        </div>
-        <div class="col-sm-4">
-          <%= image_tag 'about1.png' %>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div data-aos="flip-left" data-aos-once=true data-aos-duration="1500">
-        <div class="col-sm-4 col-sm-offset-2 text-center">
-          <%= image_tag 'about2.png' %>
-        </div>
-        <div class="col-sm-5 about-text">
-          <h3>ランキング</h3>
-          <p>
-            歩数のランキングにより <br>
-            フォローしたユーザーの歩数も <br>
-            確認することができます。
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div data-aos="flip-right" data-aos-once=true data-aos-duration="1500">
-        <div class="col-sm-3 col-sm-offset-3 about-text">
-          <h3>目標を数値化する</h3>
-          <p>
-            目標の歩数を設定することにより <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 text-center">
+          <div class="balloon">
+            <h3>目標歩数の設定</h3>
+          </div>
+          <div data-aos="flip-right" data-aos-once=true data-aos-duration="1500">
+            <%= image_tag 'target.jpg' %>
+          </div>
+          <p class="about-discription">
+            目標の歩数を設定することで <br>
             １週間の目標達成率が <br>
             自動で計算されます。
           </p>
         </div>
-        <div class="col-sm-6">
-          <%= image_tag 'about4.png' %>
-        </div>
-      </div>
-    </div>
 
-    <div class="row">
-      <div data-aos="flip-left" data-aos-once=true data-aos-duration="1500">
-        <div class="col-sm-4 col-sm-offset-2 text-center">
-          <%= image_tag 'about3.png' %>
+        <div class="col-sm-4 text-center">
+          <div class="balloon">
+            <h3>ランキング</h3>
+          </div>
+          <div data-aos="flip-left" data-aos-once=true data-aos-duration="1500">
+            <%= image_tag 'ranking.jpg' %>
+          </div>
+          <p class="about-discription">
+            他のユーザーをフォローすると<br>
+            １ヶ月の歩数の合計が<br>
+            ランキング形式で表示されます。
+          </p>
         </div>
-        <div class="col-sm-6 about-text about-text-bottom">
-          <h3>カレンダー</h3>
-          <p>
-            入力された歩数はカレンダーで<br>
-            簡単に確認することができます。 <br>
+
+        <div class="col-sm-4 text-center">
+          <div class="balloon">
+            <h3>カレンダー</h3>
+          </div>
+          <div data-aos="flip-left" data-aos-once=true data-aos-duration="1500">
+            <%= image_tag 'calendar.jpg' %>
+          </div>
+          <p class="about-discription">
+            記録した歩数は、<br>
+            カレンダーに表示されるので <br>
+            一目で確認することができます。 <br>
           </p>
         </div>
       </div>

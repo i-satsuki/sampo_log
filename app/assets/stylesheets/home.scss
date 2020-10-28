@@ -29,12 +29,6 @@
 	h2{
 		font-size: 36px;
 	}
-	h3{
-		font-size: 36px;
-	}
-	p{
-		font-size: 24px;
-	}
 }
 .top-image {
 	height:	600px;
@@ -50,33 +44,55 @@
 	color: #fff;
 	font-weight: bold;
 	text-align: right;
-	&.top-title-bottom{
-		padding-top: 0;
-	}
 }
 .about{
 	background-color: #fff;
+	padding-bottom: 40px;
 	img{
-		width: 400px;
-		margin: 100px auto;
+		height: 200px;
+		margin: 20px auto;
 	}
 }
 .about-text{
-	margin-top: 160px;
-	h3{
-		color: #FF9800;
-		margin-bottom: 24px;
-	}
+	margin-bottom: 32px;
+	font-size: 24px;
 }
+.about-discription{
+	font-size: 20px;
+}
+.balloon{
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 24px 40px;
+  background: #c1e0da;
+  border-radius: 10px;
+  &:before {
+	  content: "";
+	  position: absolute;
+	  top: 100%;
+	  left: 50%;
+	  margin-left: -15px;
+	  border: 15px solid transparent;
+	  border-top: 15px solid #c1e0da;
+  }
+  h3{
+	  margin: 0;
+	  padding: 0;
+  }
+}
+
 .top-signup-image{
 	margin-bottom: 24px;
 	img{
 		width: 800px;
+		margin-top: 0;
 	}
 }
 .top-signup-text{
-	margin-top: 180px;
+	margin-top: 150px;
 	margin-bottom: 40px;
+	font-size: 24px;
 }
 .top-image{
 	background-image: image-url("top1.jpg");
