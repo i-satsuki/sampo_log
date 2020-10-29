@@ -128,20 +128,11 @@ label{
 	background-color: #F1F8E9;
 }
 
-// フッターの位置を最下部に固定
-.wrapper{
-    position: relative;/*←相対位置*/
-    padding-bottom: 120px;/*←footerの高さ*/
-    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
-}
-
 footer{
     width: 100%;
     color: #807171;
     text-align: center;
     padding: 30px 0;
-    position: absolute;/*←絶対位置*/
-    bottom: 0; /*下に固定*/
 }
 
 // 編集、更新ボタン
@@ -266,8 +257,9 @@ footer{
 	 	margin-bottom: 24px;
 	}
 	.post-image{
+		text-align: center;
 		img{
-			width: 505px;
+			width: 98%;
 		}
 	}
 	.post-update-btn{
@@ -445,5 +437,39 @@ footer{
 	.menu.active {
 	  opacity: 100;
 	  display: block;
+	}
+}
+
+// スマートフォンサイズ
+@media screen and (max-width: 414px){
+	h2{
+		font-size: 28px;
+	}
+	header{
+		height: 150px;
+	}
+	.search{
+		position: absolute;
+		top: 60px;
+		left: 48px;
+	}
+	.top-title{
+		font-size: 24px;
+	}
+	.top-image{
+		height: 400px;
+	}
+	.chart-heading {
+	    font-size: 14px;
+	}
+	.login{
+		height: 600px
+	}
+	.post-image{
+		text-align: center;
+		img{
+			width: 98%;
+			height: auto;
+		}
 	}
 }
