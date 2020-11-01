@@ -34,7 +34,7 @@
                 </td>
               </div>
               <td style="vertical-align: middle;">
-                <%= user.posts.where(created_at: Time.now.all_month).sum(:steps) %>
+                <%= user.posts.where(created_at: @target_month.all_month).sum(:steps) %>
               </td>
             </tr>
           <% end %>
