@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update, :unsubscribe, :withdraw]
+  before_action :set_user, except: [:search]
 
   def show
-    @user = User.find(params[:id])
     @followings = @user.following_user.where(is_deleted: false)
     @followers = @user.follower_user.where(is_deleted: false)
 
@@ -21,11 +21,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to user_path(@user), notice: "更新に成功しました！"
     else
@@ -39,7 +37,6 @@ class UsersController < ApplicationController
   end
 
   def withdraw
-    @user = User.find(params[:id])
     if @user.update(is_deleted: true)
       sign_out current_user
     end
@@ -53,13 +50,11 @@ class UsersController < ApplicationController
 
   # 自分がフォローしているユーザー一覧
   def following
-    @user = User.find(params[:id])
     @followings = @user.following_user.where(is_deleted: false)
   end
 
   # 自分をフォローしているユーザー一覧
   def follower
-    @user = User.find(params[:id])
     @followers = @user.follower_user.where(is_deleted: false)
   end
 
@@ -74,5 +69,9 @@ class UsersController < ApplicationController
     unless @user == current_user
       redirect_to user_path(current_user)
     end
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
