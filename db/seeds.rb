@@ -22,3 +22,8 @@ User.all.each do |user|
     steps: "8000"
   )
 end
+
+Admin.create!(
+  email: "admin@gmail.com",
+  password: "000000"
+  )

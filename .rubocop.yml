@@ -1,5 +1,8 @@
 inherit_from:
+  - .rubocop_todo.yml
   - .rubocop_airbnb.yml
+
+
 
 #ここにはrubocopでコード解析したくないファイルやフォルダを指定します
 AllCops:

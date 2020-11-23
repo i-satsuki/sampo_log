@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="row">
+		<h2 class="text-center col-xs-12">フォロー中</h2>
+	</div>
+
+	<% if @followings.count > 0 %>
+			<% @followings.each do |following| %>
+				<div class="relationship-list">
+					<div class="row">
+						<div class="following text-center">
+							<%= link_to admin_user_path(following), class: "user_#{following.id}" do %>
+								<%= attachment_image_tag(following, :profile_image, size: "50x50", fallback: "no_image.png", style: "border-radius: 50%;", class: " relationship-profile-image") %>
+							<% end %>
+
+							<%= link_to admin_user_path(following), class: "user_#{following.id} relationship-name" do %>
+								<%= following.name %>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			<% end %>
+	<% else %>
+		<div class="row">
+			<h3 class="text-center">ユーザーはいません</h3>
+		</div>
+	<% end %>
+</div>

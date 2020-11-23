@@ -10,6 +10,14 @@
 	<% end %>
 
 	<div class="row">
+		<div class="col-sm-1">
+			<%= f.label :created_at, '日時', class: 'control-label' %>
+		</div>
+		<div class="col-sm-11">
+			<%= f.datetime_select :created_at, class: 'form-control' %>
+		</div>
+	</div>
+	<div class="row">
 		<div class="col-sm-8">
 			<%= f.text_field :title, placeholder: 'タイトル', class: "form-control" %>
 		</div>

@@ -1,0 +1,46 @@
+<div class="container">
+	<div class="row">
+		<h2 class="text-center col-xs-12"><%= @user.name %>さんのプロフィール</h2>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-3">
+			<div class="text-center">
+				<%= attachment_image_tag(@user, :profile_image, size: "200x200", fallback: "no_image.png", style: "border-radius: 50%;") %>
+			</div>
+
+			<div class="follow-count text-center">
+				<strong id='following-count_<%= @user.id %>'>
+					<%= link_to "#{ @followings.count }", following_admin_user_path(@user) %>
+				</strong>
+				<span>フォロー</span>
+				<span>|</span>
+				<strong id='follower-count_<%= @user.id %>}'>
+					<%= link_to "#{ @followers.count }", follower_admin_user_path(@user) %>
+				</strong>
+				<span>フォロワー</span> <br>
+			</div>
+			<br>
+			<p class="text-center"><%= link_to '投稿リストを見る', admin_posts_path(user: @user.id) %></p>
+		</div>
+		<div class="col-sm-9">
+			<label>自己紹介</label>
+			<p class="user-show-introduction"><%= @user.introduction %></p>
+
+			<% if @user.target_number == nil %>
+				<label>１週間の目標達成率</label> <br>
+				<p class="achievement_rate text-center col-sm-7">編集画面から１週間の目標歩数を設定してください。</p>
+			<% else %>
+				<label>１週間の目標達成率</label> <br>
+				<p class="achievement_rate text-center col-sm-3"><%= @achievement_rate %>％</p>
+			<% end %>
+
+			<label class="col-sm-9" style="padding: 0;">会員ステータス</label> <br>
+			<% if  @user.is_deleted == false %>
+				<%= link_to "無効に切り替える", invalid_admin_user_path(@user.id), method: :patch, class: "btn btn-danger col-sm-4" %>
+			<% elsif @user.is_deleted ==true %>
+				<%= link_to "有効に切り替える", valid_admin_user_path(@user.id), method: :patch, class: "btn btn-default col-sm-4" %>
+			<% end %>
+		</div>
+	</div>
+</div>

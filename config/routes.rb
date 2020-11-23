@@ -4,6 +4,23 @@ Rails.application.routes.draw do
   get 'charts/monthly'
   get '/events', to: 'events#index'
 
+  devise_for :admin, controllers: {
+    sessions: 'admin/sessions',
+  }
+
+  namespace :admin do
+    resources :users, only: [:index, :show] do
+      member do
+        get "following"
+        get "follower"
+        patch "valid"
+        patch "invalid"
+      end
+    end
+    resources :posts, except: [:edit, :update, :new, :create]
+    get 'search' => 'search#search'
+  end
+
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -14,7 +31,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update] do
     resource :relationships, only: [:create, :destroy]
-    # 退会機能
     member do
       get "unsubscribe"
       patch "withdraw"
